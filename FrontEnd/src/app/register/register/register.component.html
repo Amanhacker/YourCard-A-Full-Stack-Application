@@ -1,0 +1,23 @@
+<section class="register-container">
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Register to enjoy exciting offer!
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <form class="register-form" (submit)="registerSubmit()">
+            <mat-form-field>
+                <input class="id" matInput placeholder="UserId" [formControl]="id">
+                <mat-error *ngIf="id.invalid">{{ getuserIdErrorMessage() }}</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input class="password" matInput type="password" placeholder="Password" [formControl]="password">
+                <mat-error *ngIf="password.invalid">{{ getPasswordErrorMessage() }}</mat-error>
+            </mat-form-field>
+            <br>
+            <label class="error-message">{{ registerMessage }}</label>
+            <br>
+            <button mat-raised-button color="primary">Register</button>
+        </form>
+    </mat-expansion-panel>
+</section>

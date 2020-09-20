@@ -1,0 +1,14 @@
+.register-container {
+  margin: 200px 900px;
+  display: flex;
+  flex-direction: column;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.error-message {
+  color: red;
+}
