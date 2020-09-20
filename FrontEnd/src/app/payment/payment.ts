@@ -4,5 +4,6 @@ export class Payment {
     year: string;
     country: string;
     category: string;
-    outlet: string;
+    amount: number;
+    outlet: string
 }

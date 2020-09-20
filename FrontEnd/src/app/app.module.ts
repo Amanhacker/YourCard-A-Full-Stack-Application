@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderModule } from './header/header.module';
 import { FooterModule} from './footer/footer.module';
 import { DashboardModule} from './dashboard/dashboard.module';
 import { PaymentModule} from './payment/payment.module';
@@ -11,23 +10,44 @@ import { RegisterModule} from './register/register.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterService } from './services/router.service';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { HomeComponent } from './home/home/home.component';
+import { HomeModule } from './home/home.module';
+import { PagenotfoundexceptionModule } from './pagenotfoundexception/pagenotfoundexception.module';
+import { ContactusComponent } from './contactus/contactus/contactus.component';
+import { ContactusModule } from './contactus/contactus.module';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavBarComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HeaderModule,
     FooterModule,
+    ContactusModule,
     DashboardModule,
+    HomeModule,
+    PagenotfoundexceptionModule,
     PaymentModule,
     LoginModule,
     RegisterModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule
   ],
   providers: [HttpClientModule, RouterService],
   bootstrap: [AppComponent]

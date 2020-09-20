@@ -1,23 +1,75 @@
-<section class="register-container">
-    <mat-expansion-panel>
-        <mat-expansion-panel-header>
-            <mat-panel-title>
-                Register to enjoy exciting offer!
-            </mat-panel-title>
-        </mat-expansion-panel-header>
-        <form class="register-form" (submit)="registerSubmit()">
-            <mat-form-field>
-                <input class="id" matInput placeholder="UserId" [formControl]="id">
-                <mat-error *ngIf="id.invalid">{{ getuserIdErrorMessage() }}</mat-error>
-            </mat-form-field>
-            <mat-form-field>
-                <input class="password" matInput type="password" placeholder="Password" [formControl]="password">
-                <mat-error *ngIf="password.invalid">{{ getPasswordErrorMessage() }}</mat-error>
-            </mat-form-field>
-            <br>
-            <label class="error-message">{{ registerMessage }}</label>
-            <br>
-            <button mat-raised-button color="primary">Register</button>
-        </form>
-    </mat-expansion-panel>
-</section>
+<div class="main">
+<mat-expansion-panel class='add-register-panel'>
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            Registration Form
+        </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div class="registration-form">
+    
+        <mat-form-field>
+            <input [formControl]='name' type="text" required matInput placeholder="First Name">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+            <input [formControl]='name' type="text" required matInput placeholder="Last Name">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+            <input [formControl]='DOB' required matInput placeholder="Date of Birth">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+            <input [formControl]='aadhar-No' type="number" required matInput placeholder="Aadhar No">
+        </mat-form-field>
+        <br>
+        
+        <mat-form-field>
+            <input [formControl]='pan-No' type="number" required matInput placeholder="Pan No">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+            <input [formControl]='address' required matInput placeholder="Address">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+            <input [formControl]='district' type="text" required matInput placeholder="District">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+            <input [formControl]='state' type="text" required matInput placeholder="State">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+            <input [formControl]='country' type="text" required matInput placeholder="Country">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+            <input [formControl]='customerId' type="number" required matInput placeholder="Customer Id">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+            <input [formControl]='password' type="password" required matInput placeholder="Password">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+            <input [formControl]='password' type="password" required matInput placeholder=" Confirm Password">
+        </mat-form-field>
+        <br>
+        
+        <button mat-fab color="primary" class="register" (click)='register()'>Register</button>
+
+    </div>
+
+</mat-expansion-panel>
+</div>

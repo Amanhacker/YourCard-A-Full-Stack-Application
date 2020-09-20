@@ -15,6 +15,7 @@ export class PaymentComponent implements OnInit {
   year = new FormControl();
   country = new FormControl();
   category = new FormControl();
+  amount = new FormControl();
   outlet = new FormControl();
 
   constructor(private authenticationService: AuthenticationService) { }
@@ -29,6 +30,7 @@ export class PaymentComponent implements OnInit {
       year: this.year.value,
       country: this.country.value,
       category: this.category.value,
+      amount: this.amount.value,
       outlet: this.outlet.value
     }
   console.log(this.payment);

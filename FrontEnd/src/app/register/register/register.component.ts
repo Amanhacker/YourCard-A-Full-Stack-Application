@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { RegisterService } from 'src/app/services/register.service';
 import { RouterService } from 'src/app/services/router.service';
 import { User } from './user';
-
+import { Router } from '@angular/router';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-register',
@@ -12,6 +13,10 @@ import { User } from './user';
 })
 export class RegisterComponent implements OnInit {
 
+  registerForm: FormGroup;
+  loading = false;
+  submitted = false;
+  error: string;
   
   id = new FormControl('', Validators.compose([Validators.required, Validators.minLength(5)]));
   password = new FormControl('', Validators.compose([Validators.required, Validators.minLength(5)]));
@@ -19,11 +24,26 @@ export class RegisterComponent implements OnInit {
   registerMessage: string;
   userId;
 
-  constructor(private registerService: RegisterService, private routerService: RouterService) {
-    this.registerMessage = '';
+  constructor(
+        private formBuilder: FormBuilder,
+        private router: Router,
+        private authenticationService: AuthenticationService,
+        private registerService: RegisterService,
+        private routerService: RouterService) {
+      
+          this.registerMessage = '';
+          // if (this.authenticationService.currentUserValue) {
+          //   this.router.navigate(['\']);
+          // }
   }
 
-  ngOnInit() {
+  ngOnInit() : any {
+    this.registerForm = this.formBuilder.group({
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      username: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(6)]]
+    });
   }
 
   registerSubmit() {
@@ -34,7 +54,7 @@ export class RegisterComponent implements OnInit {
     this.registerService.registerUser(this.user).subscribe(
       data => {
         console.log(data);
-        this.registerMessage = "Registartion successful"
+        this.registerMessage = "Registration successful"
         this.routerService.routeToLogin();
       },
       err => {
@@ -42,6 +62,8 @@ export class RegisterComponent implements OnInit {
       }
     );
   }
+
+
   getuserIdErrorMessage() {
     if (this.id.touched && this.id.hasError('required')) {
       return 'Username is required';
@@ -49,6 +71,7 @@ export class RegisterComponent implements OnInit {
       return 'Minimum length of username should be 5';
     }
   }
+  
   getPasswordErrorMessage() {
     if (this.password.touched && this.password.hasError('required')) {
       return 'Password is required';

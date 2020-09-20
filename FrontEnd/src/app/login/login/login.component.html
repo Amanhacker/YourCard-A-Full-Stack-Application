@@ -1,23 +1,16 @@
-<section class="login-container">
-    <mat-expansion-panel>
-        <mat-expansion-panel-header>
-            <mat-panel-title>
-                Login
-            </mat-panel-title>
-        </mat-expansion-panel-header>
-        <form class="login-form" (submit)="loginSubmit()">
-            <mat-form-field>
-                <input class="id" matInput placeholder="UserId" [formControl]="id">
-                <mat-error *ngIf="id.invalid">{{ getuserIdErrorMessage() }}</mat-error>
-            </mat-form-field>
-            <mat-form-field>
-                <input class="password" matInput type="password" placeholder="Password" [formControl]="password">
-                <mat-error *ngIf="password.invalid">{{ getPasswordErrorMessage() }}</mat-error>
-            </mat-form-field>
-            <br>
-            <label class="error-message">{{ loginMessage }}</label>
-            <br>
-            <button mat-raised-button color="primary">Login</button>
-        </form>
-    </mat-expansion-panel>
-</section>
+<div class="login">
+    <label class="error-message">{{ submitMessage }}</label>
+
+    <form [formGroup]='loginForm' (ngSubmit)='loginSubmit()'>
+        <mat-form-field>
+            <input class="username" id="username" matInput placeholder="Customer Id" type="text" required
+                formControlName='username'>
+
+        </mat-form-field>
+        <mat-form-field>
+            <input class="password" id="password" matInput required placeholder="Password" type="password"
+                formControlName='password'>
+        </mat-form-field>
+        <button id="login" type="submit" [disabled]='loginForm.invalid' mat-raised-button color="primary">Login</button>
+    </form>
+</div>

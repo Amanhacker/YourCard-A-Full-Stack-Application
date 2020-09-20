@@ -8,8 +8,16 @@ export class RouterService {
 
   constructor(private router: Router) { }
 
+  routeToHome() {
+    this.router.navigate(['/home']);
+  }
+
   routeToDashboard() {
     this.router.navigate(['/dashboard']);
+  }
+
+  routeToContactUs() {
+    this.router.navigate(['/contactus']);
   }
 
   routeToPayment() {
@@ -23,4 +31,5 @@ export class RouterService {
   routeToLogin() {
     this.router.navigate(['/login']);
   }
+
 }
