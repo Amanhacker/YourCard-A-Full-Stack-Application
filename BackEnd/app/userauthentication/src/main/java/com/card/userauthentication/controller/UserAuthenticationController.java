@@ -8,10 +8,7 @@ import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -40,12 +37,12 @@ public class UserAuthenticationController {
     }
 
     @PostMapping("/auth/login")
-    public ResponseEntity userLogin(@RequestBody User user){
+    public ResponseEntity userLogin(@RequestParam String userId, @RequestParam String password){
 
         try {
-            String jwtToken = generateToken(user.getId(), user.getPassword());
+            String jwtToken = generateToken(userId, password);
             map.put("message" , "User successfully logged in");
-            map.put("user", user.getId());
+            map.put("user", userId);
             map.put("token",jwtToken);
         } catch (Exception e) {
             map.put("message",e.getMessage());
