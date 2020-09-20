@@ -8,12 +8,12 @@ public class Payment {
     private String country;
     private String category;
     private String outlet;
-    private double amount;
+    private String amount;
 
     public Payment() {
     }
 
-    public Payment(int id, String customer, String year, String country, String category, String outlet, double amount) {
+    public Payment(int id, String customer, String year, String country, String category, String outlet, String amount) {
         this.id = id;
         this.customer = customer;
         this.year = year;
@@ -71,11 +71,11 @@ public class Payment {
         this.outlet = outlet;
     }
 
-    public double getAmount() {
+    public String getAmount() {
         return amount;
     }
 
-    public void setAmount(double amount) {
+    public void setAmount(String amount) {
         this.amount = amount;
     }
 
@@ -88,7 +88,7 @@ public class Payment {
                 ", country='" + country + '\'' +
                 ", category='" + category + '\'' +
                 ", outlet='" + outlet + '\'' +
-                ", amount=" + amount +
+                ", amount='" + amount + '\'' +
                 '}';
     }
 }

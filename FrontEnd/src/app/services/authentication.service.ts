@@ -8,7 +8,7 @@ export class AuthenticationService {
 
   constructor(private httpClient: HttpClient) { }
 
-  authenticateUser(user: any) {
+  authenticateUser(user) {
     return this.httpClient.post("http://localhost:8765/authenticationservice/auth/login", user);
   }
 

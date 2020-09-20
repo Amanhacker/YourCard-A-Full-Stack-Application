@@ -17,39 +17,47 @@ export class RegisterComponent implements OnInit {
   loading = false;
   submitted = false;
   error: string;
-  
-  id = new FormControl('', Validators.compose([Validators.required, Validators.minLength(5)]));
-  password = new FormControl('', Validators.compose([Validators.required, Validators.minLength(5)]));
   user: User;
+
+  id = new FormControl('', Validators.compose([Validators.required, Validators.minLength(5)]));
+  DOB = new FormControl('', Validators.compose([Validators.required]));
+  aadharNo = new FormControl('', Validators.compose([Validators.required]));
+  panNo = new FormControl('', Validators.compose([Validators.required]));
+  houseNo = new FormControl('', Validators.compose([Validators.required]));
+  district = new FormControl('', Validators.compose([Validators.required]));
+  state = new FormControl('', Validators.compose([Validators.required]));
+  country = new FormControl('', Validators.compose([Validators.required]));
+  password = new FormControl('', Validators.compose([Validators.required, Validators.minLength(5)]));
+  amount = new FormControl('', Validators.compose([Validators.required]));
   registerMessage: string;
-  userId;
 
   constructor(
-        private formBuilder: FormBuilder,
-        private router: Router,
-        private authenticationService: AuthenticationService,
-        private registerService: RegisterService,
-        private routerService: RouterService) {
-      
-          this.registerMessage = '';
-          // if (this.authenticationService.currentUserValue) {
-          //   this.router.navigate(['\']);
-          // }
+    private router: Router,
+    private authenticationService: AuthenticationService,
+    private registerService: RegisterService,
+    private routerService: RouterService) {
+
+    this.registerMessage = '';
+    // if (this.authenticationService.currentUserValue) {
+    //   this.router.navigate(['\']);
+    // }
   }
 
-  ngOnInit() : any {
-    this.registerForm = this.formBuilder.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
-      username: ['', Validators.required],
-      password: ['', [Validators.required, Validators.minLength(6)]]
-    });
+  ngOnInit() {
   }
 
-  registerSubmit() {
+  register() {
     this.user = {
       id: this.id.value,
-      password: this.password.value
+      DOB: this.DOB.value,
+      aadharNo: this.aadharNo.value,
+      panNo: this.panNo.value,
+      houseNo: this.houseNo.value,
+      district: this.district.value,
+      state: this.state.value,
+      country: this.country.value,
+      password: this.password.value,
+      amount: this.amount.value
     };
     this.registerService.registerUser(this.user).subscribe(
       data => {
@@ -71,7 +79,7 @@ export class RegisterComponent implements OnInit {
       return 'Minimum length of username should be 5';
     }
   }
-  
+
   getPasswordErrorMessage() {
     if (this.password.touched && this.password.hasError('required')) {
       return 'Password is required';

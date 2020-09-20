@@ -37,12 +37,12 @@ public class UserAuthenticationController {
     }
 
     @PostMapping("/auth/login")
-    public ResponseEntity userLogin(@RequestParam String userId, @RequestParam String password){
+    public ResponseEntity userLogin(@RequestBody User user){
 
         try {
-            String jwtToken = generateToken(userId, password);
+            String jwtToken = generateToken(user.getId(), user.getPassword());
             map.put("message" , "User successfully logged in");
-            map.put("user", userId);
+            map.put("user", user.getId());
             map.put("token",jwtToken);
         } catch (Exception e) {
             map.put("message",e.getMessage());

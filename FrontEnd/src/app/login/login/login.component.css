@@ -1,43 +1,14 @@
-form{
-    margin: 10vh auto;
-    width: 30vw;
-    display: flex;
-    flex-flow: column;
-    padding: 10vh 10vw;
-    border: 1px solid black;
-    box-shadow: 5px 5px black;
-
+.login-container {
+  margin: 200px 900px;
+  display: flex;
+  flex-direction: column;
 }
 
-.login-expansion{
-    margin: 10vh auto;
-    width: 50vw;
+.login-form {
+  display: flex;
+  flex-direction: column;
 }
 
-input{
-    width: 20vw;
-    margin:auto;
+.error-message {
+  color: red;
 }
-
-button{
-    margin-left:auto;
-}
-
-.error-border{
-    border-bottom-color: red;
-}
-
-.error-message{
-
-    color: red;
-}
-
-.error-hide{
-    display: none;
-}
-
-.login{
-    min-height: 100vh;
-}
-
-

@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,5 +6,10 @@ import { Injectable } from '@angular/core';
 })
 export class PaymentService {
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
+
+
+  addUserPaymentData(payment: any) {
+    return this.httpClient.post("http://localhost:8765/paymentservice/addPayment", payment);
+  }
 }
