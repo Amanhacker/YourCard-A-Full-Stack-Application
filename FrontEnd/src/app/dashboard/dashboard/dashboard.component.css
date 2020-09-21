@@ -1,0 +1,45 @@
+.dashboard {
+    position: auto;
+    margin-left: 45%;
+}
+
+.card-info1 {
+    font-weight: bold;
+}
+
+.card-info2 {
+    display: normal;
+    font-weight: 400;
+}
+
+
+#divChart {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    margin-left: 2em;
+}
+
+#myChart2 {
+    margin-left: 4em;
+}
+
+.title {
+    font-weight: normal;
+}
+
+.example-card {
+    max-width: 300px;
+    margin-left:20%;
+    margin-bottom: 2em;
+    margin-top: 2em;
+  }
+  
+  .example-header-image {
+    background-image: url('../../../assets/images/logo.png');
+    background-size: cover;
+  }
+
+  .card-flex {
+      display: flex;
+  }

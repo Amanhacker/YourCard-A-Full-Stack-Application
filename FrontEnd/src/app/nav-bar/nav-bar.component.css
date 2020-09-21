@@ -26,13 +26,13 @@
   justify-content: flex-end;
 }
 
-.register-btn {
+.login-btn {
   font-size: large;
   margin-left: 4em;
   background-color: #0d253f;
 }
 
-.login-btn {
+.register-btn {
   font-size: large;
   margin-left: 7em;
   background-color: #0d253f;
