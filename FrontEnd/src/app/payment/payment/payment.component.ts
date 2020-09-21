@@ -18,6 +18,7 @@ export class PaymentComponent implements OnInit {
   category = new FormControl();
   outlet = new FormControl();
   amount = new FormControl();
+  errMessage: string;
 
   constructor(private authenticationService: AuthenticationService, private paymentService: PaymentService) { }
 
@@ -34,8 +35,12 @@ export class PaymentComponent implements OnInit {
       outlet: this.outlet.value,
       amount: this.amount.value
     }
-    console.log(this.payment);
-    this.paymentService.addUserPaymentData(this.payment);
-  }
-
+    this.paymentService.addUserPaymentData(this.payment).subscribe(data => {
+      console.log(data);
+    },
+      error => {
+        this.errMessage = error;
+      });
+  };
 }
+
