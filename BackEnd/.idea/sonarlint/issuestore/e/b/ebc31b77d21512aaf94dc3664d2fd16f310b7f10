@@ -1,0 +1,17 @@
+
+M
+java:S3655""7Call "Optional#isPresent()" before accessing the value.(›êÅç
+m
+java:S1450"WRemove the "cardUser" field and declare it as a local variable in the relevant methods.(êíýÍ
+R
+java:S2589,"7Remove this expression which always evaluates to "true"(ÇÆÐÌùÿÿÿÿ
+Y
+java:S3655C"7Call "Optional#isPresent()" before accessing the value.(¢°”÷ûÿÿÿÿ8Ò–¶‹Ë.
+R
+java:S25894"7Remove this expression which always evaluates to "true"(¨ ŠÐøÿÿÿÿ
+J
+java:S3740#"/Provide the parametrized type for this generic.(–«ù›øÿÿÿÿ
+~
+java:S1488J"bImmediately return this expression instead of assigning it to the temporary variable "allPayment".(ÐðÈ68Êëˆ‹Ë.
+u
+java:S1450"ZRemove the "paymentList" field and declare it as a local variable in the relevant methods.(®¸¬¡þÿÿÿÿ

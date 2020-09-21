@@ -1,14 +1,16 @@
-package com.card.payment.repository;
+package com.card.payment.service;
 
 import com.card.payment.domain.CardUser;
 import com.card.payment.domain.Payment;
-import com.card.payment.service.IPaymentService;
+import com.card.payment.exception.UserNotFoundException;
+import com.card.payment.repository.PaymentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PaymentServiceImpl implements IPaymentService {
@@ -55,8 +57,21 @@ public class PaymentServiceImpl implements IPaymentService {
     }
 
     @Override
-    public List<Payment> getAllPaymentByUserId(String userId) {
-        List<Payment> allPayments = repository.findById(userId).get().getPaymentList();
+    public List<Payment> getAllPaymentsByUserId(String userId) throws UserNotFoundException {
+        List<Payment> allPayments = null;
+        Optional<CardUser> optionalUser = repository.findById(userId);
+        if(!optionalUser.isPresent()){
+            throw new UserNotFoundException("User with the given id doesn't exist");
+        }
+        else{
+            allPayments = repository.findById(userId).get().getPaymentList();
+        }
         return allPayments;
+    }
+
+    @Override
+    public List<Payment> getAllPaymentsByOutlet(String outletName) {
+        List<Payment> allPayment = repository.findAllPaymentsByOutlet(outletName);
+        return allPayment;
     }
 }

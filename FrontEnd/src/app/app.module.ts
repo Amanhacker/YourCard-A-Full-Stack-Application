@@ -17,11 +17,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { HomeComponent } from './home/home/home.component';
 import { HomeModule } from './home/home.module';
 import { PagenotfoundexceptionModule } from './pagenotfoundexception/pagenotfoundexception.module';
-import { ContactusComponent } from './contactus/contactus/contactus.component';
 import { ContactusModule } from './contactus/contactus.module';
+import { SearchModule } from './search/search.module';
 
 
 @NgModule({
@@ -47,7 +46,8 @@ import { ContactusModule } from './contactus/contactus.module';
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    SearchModule
   ],
   providers: [HttpClientModule, RouterService],
   bootstrap: [AppComponent]
