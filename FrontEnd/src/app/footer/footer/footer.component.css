@@ -1,9 +1,9 @@
-footer {
+.footer {
     margin: 57vh 0 0;
     background-color: #4b0082;
     color: white;
     text-align: center;
-    height: 20vh;
+    height: 15vh;
   }
   
   footer h2 {
