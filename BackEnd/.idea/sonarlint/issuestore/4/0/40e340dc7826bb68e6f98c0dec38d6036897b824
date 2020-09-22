@@ -1,19 +1,0 @@
-
-<
-java:S1452#"&Remove usage of generic wildcard type.(§Ë¶è
-n
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ë”‹T
-L
-java:S3740"/Provide the parametrized type for this generic.(ëú–¦8«¾¤‹Ë.
-L
-java:S3740)"/Provide the parametrized type for this generic.(³à«8«¾¤‹Ë.
-A
-java:S1452"&Remove usage of generic wildcard type.(Ë¬®ëûÿÿÿÿ
-H
-java:S1452/"&Remove usage of generic wildcard type.( Œ«ùÿÿÿÿ8ı±ßŠË.
-{
-java:S22934"YReplace the type specification in this constructor call with the diamond operator ("<>").(©ı•ùÿÿÿÿ8îÖßŠË.
-o
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ä„È¿
-v
-java:S22932"YReplace the type specification in this constructor call with the diamond operator ("<>").(ŠÄ©¦8îÖßŠË.

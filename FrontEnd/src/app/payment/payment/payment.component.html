@@ -6,13 +6,23 @@
     </mat-expansion-panel-header>
     <div class="payment-form">
     
-        <mat-form-field>
+        <!-- <mat-form-field>
             <input [formControl]='id' matInput placeholder="Payment ID">
+        </mat-form-field>
+        <br> -->
+
+        <mat-form-field>
+            <input [formControl]='month' matInput placeholder="Month">
         </mat-form-field>
         <br>
 
         <mat-form-field>
             <input [formControl]='year' matInput placeholder="Year">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+            <input [formControl]='city' matInput placeholder="City">
         </mat-form-field>
         <br>
 
@@ -27,6 +37,7 @@
                 <mat-option value="Entertainment">Entertainment</mat-option>
                 <mat-option value="Shopping">Shopping</mat-option>
                 <mat-option value="HotelStay">Hotel Stay</mat-option>
+                <mat-option value="ATM">ATM Withdrawal</mat-option>
                 <mat-option value="Others">Others</mat-option>
             </mat-select>
         </mat-form-field>
