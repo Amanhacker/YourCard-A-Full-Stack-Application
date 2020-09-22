@@ -4,18 +4,17 @@
 
   
 .main {
-    padding: 0%;
-    margin: 0%;
     position: absolute;
+    height: 90%;
 }
   
   /* Style inputs */
   input[type=text], select, textarea {
     width: 100%;
-    padding: 12px;
     border: 1px solid #ccc;
+    padding: 12px;
     margin-top: 6px;
-    margin-bottom: 16px;
+    margin-bottom: 24px;
     resize: vertical;
   }
   
@@ -55,6 +54,11 @@
 
   .submit {
       padding-bottom: 0%;
+  }
+
+  .img {
+    margin-top: 6vh;
+    font-size: 0.8em;
   }
   
   /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */

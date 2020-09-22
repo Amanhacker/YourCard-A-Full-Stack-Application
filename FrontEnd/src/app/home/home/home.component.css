@@ -1,11 +1,13 @@
 .main {
   padding: 0%;
   margin: 0%;
+  padding-bottom: 0.1em;
 }
 
 .hero-unit {
     position: absolute;
     opacity: 0.8;
-    height: 100%;
+    height: 92%;
     width: 100%;
+    display: auto;
   }

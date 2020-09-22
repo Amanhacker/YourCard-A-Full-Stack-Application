@@ -1,12 +1,12 @@
-.footer {
-    margin: 57vh 0 0;
+/* .footer {
+    margin: 40em 0 0;
     background-color: #4b0082;
     color: white;
     text-align: center;
-    height: 15vh;
+    height: 22vh;
   }
   
-  footer h2 {
+  .footer h2 {
     margin: 0;
     padding: 1em 2em;
     font-size: 2em;
@@ -24,26 +24,33 @@
     footer h2 {
       font-size: 1em;
     }
-  }
-/* 
+  } */
+
 .footer-section-container {
-    margin-top: 60vh;
-    background-color: rgb(43, 41, 41);
-    height: 50vh;
+    margin-top: 91.8vh;
+    background-color:rgb(111, 12, 182);
+    height: 45vh;
     width: 100%;
 }
 
 .footer-section-content {
     display: flex;
     flex-direction: row;
+    height: 37vh;
 }
 
 .logo-links-section {
     margin-left: 8vw;
     font-weight: bold;
     margin-bottom: 5vh;
+    margin-top: 3em;
 
 }
+
+.pdts {
+    color: white; 
+}
+
 
 .logo-links-section img {
     margin-top: 0vh;
@@ -59,6 +66,10 @@
     list-style-type: none;
 }
 
+.products {
+    font-size: 1.2em;
+}
+
 .logo-links-section ui li {
     margin-left: 1.5vw;
 }
@@ -66,18 +77,19 @@
 .recent-news-section {
     width: 25vw;
     margin-left: 14vw;
+    font-weight: bold;
 }
 
 .recent-news-section h1 {
     color: white;
     font-weight: bold;
     font-size: 1.2em;
-    margin-top: 4vh;
+    margin-top: 8vh;
 }
 
 .signup-section {
-    margin-left: 30vh;
-    margin-top: 2vh;
+    margin-left: 10vh;
+    margin-top: 5.5vh;
 }
 
 .signup-section p {
@@ -105,6 +117,7 @@
 
 .social-media-links {
     display: flexbox;
+    margin-left: 0.3em;
     box-shadow: blue;
     font-weight: bold;
     font-size: 2em;
@@ -112,4 +125,24 @@
 
 .copyright {
     margin-left: 5vw;
-} */
+}
+
+#twitter {
+    margin-right: 0.2em;
+}
+
+#fb {
+    margin-right: 0.2em;
+}
+
+#instagram {
+    margin-right: 0.2em;
+}
+
+.subscribe {
+    color: white;
+}
+
+.help {
+    font-size: 1.2em;
+}
