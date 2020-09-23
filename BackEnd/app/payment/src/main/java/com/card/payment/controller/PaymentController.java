@@ -14,8 +14,8 @@ import java.util.List;
 @CrossOrigin
 public class PaymentController {
 
-   IPaymentService paymentService;
-   ResponseEntity responseEntity;
+    IPaymentService paymentService;
+    ResponseEntity responseEntity;
 
     @Autowired
     public PaymentController(IPaymentService paymentService) {
@@ -33,14 +33,13 @@ public class PaymentController {
 
     @GetMapping("/allPayments/{userId}")
     public ResponseEntity<?> getAllPaymentsByUserId(@PathVariable String userId) {
-        try{
+        try {
             List<Payment> userPayments = paymentService.getAllPaymentsByUserId(userId);
             responseEntity = new ResponseEntity<List<Payment>>(userPayments, HttpStatus.OK);
-        }
-        catch (UserNotFoundException e){
+        } catch (UserNotFoundException e) {
             responseEntity = new ResponseEntity(e.getMessage(), HttpStatus.NOT_FOUND);
         }
-        return  responseEntity;
+        return responseEntity;
     }
 
     @GetMapping("/allPaymentsByOutlet/{outletName}")
@@ -53,6 +52,65 @@ public class PaymentController {
         }
     }
 
+    @GetMapping("/allPaymentsByOutlet/{userId}/{outletName}")
+    public ResponseEntity<?> getAllPaymentsByOutletName(@PathVariable String userId, @PathVariable String outletName) {
+
+        try {
+            List<Payment> paymentListByOutletName = paymentService.getAllPaymentsByOutlet(userId, outletName);
+            responseEntity = new ResponseEntity(paymentListByOutletName, HttpStatus.OK);
+        } catch (UserNotFoundException e) {
+            responseEntity = new ResponseEntity(e.getMessage(), HttpStatus.NOT_FOUND);
+        } catch (Exception e) {
+            responseEntity = new ResponseEntity(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+
+        return responseEntity;
+    }
+
+    @GetMapping("/allPaymentsByCountry/{userId}/{country}")
+    public ResponseEntity<?> getAllPaymentsByCountryName(@PathVariable String userId, @PathVariable String country) {
+
+        try {
+            List<Payment> paymentListByCountryName = paymentService.getAllPaymentsByCountry(userId, country);
+            responseEntity = new ResponseEntity(paymentListByCountryName, HttpStatus.OK);
+        } catch (UserNotFoundException e) {
+            responseEntity = new ResponseEntity(e.getMessage(), HttpStatus.NOT_FOUND);
+        } catch (Exception e) {
+            responseEntity = new ResponseEntity(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+
+        return responseEntity;
+    }
+
+    @GetMapping("/allPaymentsByCategory/{userId}/{category}")
+    public ResponseEntity<?> getAllPaymentsByCategoryName(@PathVariable String userId, @PathVariable String category) {
+
+        try {
+            List<Payment> paymentListByCategoryName = paymentService.getAllPaymentsByCategory(userId, category);
+            responseEntity = new ResponseEntity(paymentListByCategoryName, HttpStatus.OK);
+        } catch (UserNotFoundException e) {
+            responseEntity = new ResponseEntity(e.getMessage(), HttpStatus.NOT_FOUND);
+        } catch (Exception e) {
+            responseEntity = new ResponseEntity(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+
+        return responseEntity;
+    }
+
+    @GetMapping("/allPaymentsByCity/{userId}/{city}")
+    public ResponseEntity<?> getAllPaymentsByCityName(@PathVariable String userId, @PathVariable String city) {
+
+        try {
+            List<Payment> paymentListByCityName = paymentService.getAllPaymentsByCity(userId, city);
+            responseEntity = new ResponseEntity(paymentListByCityName, HttpStatus.OK);
+        } catch (UserNotFoundException e) {
+            responseEntity = new ResponseEntity(e.getMessage(), HttpStatus.NOT_FOUND);
+        } catch (Exception e) {
+            responseEntity = new ResponseEntity(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+
+        return responseEntity;
+    }
 
 
 }
