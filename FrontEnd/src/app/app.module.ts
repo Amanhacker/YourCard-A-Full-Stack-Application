@@ -21,7 +21,8 @@ import { HomeModule } from './home/home.module';
 import { PagenotfoundexceptionModule } from './pagenotfoundexception/pagenotfoundexception.module';
 import { ContactusModule } from './contactus/contactus.module';
 import { SearchModule } from './search/search.module';
-
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -31,12 +32,14 @@ import { SearchModule } from './search/search.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    SlickCarouselModule,
     FooterModule,
     ContactusModule,
     DashboardModule,
     HomeModule,
     PagenotfoundexceptionModule,
     PaymentModule,
+    NgbModule,
     LoginModule,
     RegisterModule,
     BrowserAnimationsModule,

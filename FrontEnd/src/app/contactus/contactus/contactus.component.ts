@@ -10,12 +10,13 @@ import { Router } from '@angular/router';
 })
 export class ContactusComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private routerService: RouterService) { }
 
   ngOnInit() {
   }
 
   submit() {
+//    this.routerService.routeToHome();
     this.router.navigate(['/home']);
   }
 

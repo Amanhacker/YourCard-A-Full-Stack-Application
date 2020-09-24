@@ -49,6 +49,7 @@
 
 .pdts {
     color: white; 
+    font-size: 1.5em;
 }
 
 
@@ -104,10 +105,16 @@
     padding: 1em;
     height: 3vh;
     border-radius: 5px;
+    font-size: 1em;
+}
+
+.connect {
+    font-size: 1.2em;
 }
 
 .button h1 {
     margin-top: -0.5em;
+    font-size: 1.2em;
 }
 
 .aman {
@@ -141,6 +148,7 @@
 
 .subscribe {
     color: white;
+    font-size: 1.5em;
 }
 
 .help {
