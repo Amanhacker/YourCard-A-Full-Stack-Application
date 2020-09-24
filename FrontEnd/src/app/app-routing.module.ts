@@ -7,6 +7,7 @@ import { RegisterComponent } from './register/register/register.component';
 import { PagenotfoundexceptionComponent } from './pagenotfoundexception/pagenotfoundexception/pagenotfoundexception.component';
 import { HomeComponent } from './home/home/home.component';
 import { ContactusComponent } from './contactus/contactus/contactus.component';
+import { SearchComponent } from './search/search/search.component';
 
 
 const routes: Routes =  [
@@ -16,6 +17,7 @@ const routes: Routes =  [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'search', component: SearchComponent },
   { path: 'contactus', component: ContactusComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: PagenotfoundexceptionComponent}

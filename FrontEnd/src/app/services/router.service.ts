@@ -12,6 +12,10 @@ export class RouterService {
     this.router.navigate(['/home']);
   }
 
+  routeToSearch() {
+    this.router.navigate(['/search']);
+  }
+
   routeToDashboard() {
     this.router.navigate(['/dashboard']);
   }
