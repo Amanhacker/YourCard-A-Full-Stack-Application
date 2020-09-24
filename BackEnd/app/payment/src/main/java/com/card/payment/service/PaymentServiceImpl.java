@@ -11,15 +11,18 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class PaymentServiceImpl implements IPaymentService {
 
     private PaymentRepository repository;
+
     @Autowired
-    public  PaymentServiceImpl(PaymentRepository repository){
+    public PaymentServiceImpl(PaymentRepository repository) {
         this.repository = repository;
     }
+
     private CardUser cardUser = null;
     private List<Payment> paymentList = null;
 
@@ -60,10 +63,9 @@ public class PaymentServiceImpl implements IPaymentService {
     public List<Payment> getAllPaymentsByUserId(String userId) throws UserNotFoundException {
         List<Payment> allPayments = null;
         Optional<CardUser> optionalUser = repository.findById(userId);
-        if(!optionalUser.isPresent()){
+        if (!optionalUser.isPresent()) {
             throw new UserNotFoundException("User with the given id doesn't exist");
-        }
-        else{
+        } else {
             allPayments = repository.findById(userId).get().getPaymentList();
         }
         return allPayments;
@@ -73,5 +75,66 @@ public class PaymentServiceImpl implements IPaymentService {
     public List<Payment> getAllPaymentsByOutlet(String outletName) {
         List<Payment> allPayment = repository.findAllPaymentsByOutlet(outletName);
         return allPayment;
+    }
+
+    @Override
+    public List<Payment> getAllPaymentsByOutlet(String userId, String outletName) throws UserNotFoundException {
+
+        Optional<CardUser> optionalCardUser = repository.findById(userId);
+
+        if (!optionalCardUser.isPresent()) {
+            throw new UserNotFoundException("User with the given id doesn't exist");
+        }
+
+        List<Payment> userPaymentList = optionalCardUser.get().getPaymentList();
+
+        return userPaymentList.stream()
+                .filter(payment -> payment.getOutlet().equals(outletName))
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<Payment> getAllPaymentsByCountry(String userId, String country) throws UserNotFoundException {
+        Optional<CardUser> optionalCardUser = repository.findById(userId);
+
+        if (!optionalCardUser.isPresent()) {
+            throw new UserNotFoundException("User with the given id doesn't exist");
+        }
+
+        List<Payment> userPaymentList = optionalCardUser.get().getPaymentList();
+
+        return userPaymentList.stream()
+                .filter(payment -> payment.getCountry().equals(country))
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<Payment> getAllPaymentsByCategory(String userId, String category) throws UserNotFoundException {
+        Optional<CardUser> optionalCardUser = repository.findById(userId);
+
+        if (!optionalCardUser.isPresent()) {
+            throw new UserNotFoundException("User with the given id doesn't exist");
+        }
+
+        List<Payment> userPaymentList = optionalCardUser.get().getPaymentList();
+
+        return userPaymentList.stream()
+                .filter(payment -> payment.getCategory().equals(category))
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<Payment> getAllPaymentsByCity(String userId, String city) throws UserNotFoundException {
+        Optional<CardUser> optionalCardUser = repository.findById(userId);
+
+        if (!optionalCardUser.isPresent()) {
+            throw new UserNotFoundException("User with the given id doesn't exist");
+        }
+
+        List<Payment> userPaymentList = optionalCardUser.get().getPaymentList();
+
+        return userPaymentList.stream()
+                .filter(payment -> payment.getCity().equals(city))
+                .collect(Collectors.toList());
     }
 }
