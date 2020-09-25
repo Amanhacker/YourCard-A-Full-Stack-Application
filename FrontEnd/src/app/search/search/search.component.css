@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+/* @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 body{
   background: #f2f2f2;
@@ -26,9 +26,18 @@ body{
   color: #00B4CC;
 } 
 
-.searchButton {
+/*Resize the wrap to see the search bar change!*/
+/* .wrap{
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}  */
+
+/* .searchButton {
   width: 40px;
-  height: 50px;
+  height: 50.5px;
   border: 1px solid #00B4CC;
   background: #00B4CC;
   text-align: center;
@@ -36,13 +45,82 @@ body{
   border-radius: 0 5px 5px 0;
   cursor: pointer;
   font-size: 20px;
+} */
+
+.search-section {
+  text-align: center;
+  align-items: center;
+  margin-top: 20vh;
 }
 
-/*Resize the wrap to see the search bar change!*/
-.wrap{
-  width: 30%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.card {
+  width: 400px;
+  height: 370px;
+  align-items: center;
+  border: 1px solid black;
+  background-color: lightblue;
+  margin: 10vh 8vw;
+}
+
+.col-1 {
+  text-align: center;
+}
+
+.head-content {
+  text-align: center;
+}
+
+select{
+  height: 40px;
+  margin-left: 20px;
+}
+
+button {
+  width: 40px;
+  height: 50.5px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+input {
+  width: 40%;
+  display: inline-block;
+  margin-top: 10px;
+}
+p {
+  font-size: 1.5em;
+}
+
+h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+}
+
+.error-message {
+  color: brown;
+}
+
+@media only screen and (max-width: 320px) {
+  .card {
+    width: 300px;
+    height: 500px;
+    margin: 2em;
+  }
+
+  .movie-poster {
+    width: 200px;
+    height: 250px;
+  }
+  p {
+    font-size: 1em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
 }

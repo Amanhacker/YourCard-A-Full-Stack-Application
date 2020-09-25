@@ -12,7 +12,6 @@ import { RouterService } from "src/app/services/router.service";
 })
 export class PaymentComponent implements OnInit {
   public payment: Payment;
-  // id = new FormControl();
   month = new FormControl();
   year = new FormControl();
   city = new FormControl();

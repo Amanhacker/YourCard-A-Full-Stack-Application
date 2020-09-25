@@ -71,11 +71,6 @@ public class PaymentServiceImpl implements IPaymentService {
         return allPayments;
     }
 
-    @Override
-    public List<Payment> getAllPaymentsByOutlet(String outletName) {
-        List<Payment> allPayment = repository.findAllPaymentsByOutlet(outletName);
-        return allPayment;
-    }
 
     @Override
     public List<Payment> getAllPaymentsByOutlet(String userId, String outletName) throws UserNotFoundException {
@@ -126,7 +121,6 @@ public class PaymentServiceImpl implements IPaymentService {
     @Override
     public List<Payment> getAllPaymentsByCity(String userId, String city) throws UserNotFoundException {
         Optional<CardUser> optionalCardUser = repository.findById(userId);
-
         if (!optionalCardUser.isPresent()) {
             throw new UserNotFoundException("User with the given id doesn't exist");
         }
@@ -137,4 +131,17 @@ public class PaymentServiceImpl implements IPaymentService {
                 .filter(payment -> payment.getCity().equals(city))
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public List<Payment> getAllPaymentsByYear(String userId, String year) throws UserNotFoundException {
+        Optional<CardUser> optionalCardUser = repository.findById(userId);
+        if (!optionalCardUser.isPresent()) {
+            throw new UserNotFoundException("User with the given id doesn't exist");
+        }
+        List<Payment> userPaymentList = optionalCardUser.get().getPaymentList();
+        return userPaymentList.stream()
+                .filter(payment -> payment.getYear().equals(year))
+                .collect(Collectors.toList());
+    }
 }
+

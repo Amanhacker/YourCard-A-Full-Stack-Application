@@ -160,7 +160,7 @@ export class DashboardComponent implements OnInit {
         datasets: [
           {
             label: "Amount($) in thousands spent categorywise",
-            data: [12, 3, 10, 15, 5],
+            data: this.categoryStatistic(),
             backgroundColor: [
               "rgba(255, 99, 132, 0.2)",
               "rgba(54, 162, 235, 0.2)",

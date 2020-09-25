@@ -42,15 +42,6 @@ public class PaymentController {
         return responseEntity;
     }
 
-    @GetMapping("/allPaymentsByOutlet/{outletName}")
-    public ResponseEntity<?> getAllPaymentsByOutletName(@PathVariable String outletName) {
-        List<Payment> userPaymentsByOutlet = paymentService.getAllPaymentsByOutlet(outletName);
-        if (userPaymentsByOutlet != null) {
-            return new ResponseEntity<List<Payment>>(userPaymentsByOutlet, HttpStatus.OK);
-        } else {
-            return new ResponseEntity<String>("You don't have made any payments for the given outlet", HttpStatus.OK);
-        }
-    }
 
     @GetMapping("/allPaymentsByOutlet/{userId}/{outletName}")
     public ResponseEntity<?> getAllPaymentsByOutletName(@PathVariable String userId, @PathVariable String outletName) {
@@ -103,6 +94,21 @@ public class PaymentController {
         try {
             List<Payment> paymentListByCityName = paymentService.getAllPaymentsByCity(userId, city);
             responseEntity = new ResponseEntity(paymentListByCityName, HttpStatus.OK);
+        } catch (UserNotFoundException e) {
+            responseEntity = new ResponseEntity(e.getMessage(), HttpStatus.NOT_FOUND);
+        } catch (Exception e) {
+            responseEntity = new ResponseEntity(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+
+        return responseEntity;
+    }
+
+    @GetMapping("/allPaymentsByYear/{userId}/{year}")
+    public ResponseEntity<?> getAllPaymentsByYear(@PathVariable String userId, @PathVariable String year) {
+
+        try {
+            List<Payment> paymentListByYear = paymentService.getAllPaymentsByYear(userId, year);
+            responseEntity = new ResponseEntity(paymentListByYear, HttpStatus.OK);
         } catch (UserNotFoundException e) {
             responseEntity = new ResponseEntity(e.getMessage(), HttpStatus.NOT_FOUND);
         } catch (Exception e) {

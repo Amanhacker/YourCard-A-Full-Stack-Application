@@ -1,10 +1,29 @@
-<div class="main">
-    <div class="wrap">
-        <div class="search">
-            <input type="text" class="searchTerm" placeholder="What are you looking for ?">
-            <button type="submit" class="searchButton">
-                <i class="fa fa-search"></i>
-            </button>
-        </div>
+<div class='search-section'>
+  <div class="head-content">
+    <h2>Search for Payment:</h2>
+    <!--Getting input from the user-->
+    <input type="text" [(ngModel)]="keyword" placeholder="Search by Outlet/Category/City/Country/Year" class="form-control" />
+    <select [formControl]='searchparam'>
+      <option selected="selected" value="outlet">Outlet</option>
+      <option value="category">Category</option>
+      <option value="city">City</option>
+      <option value="country">Country</option>
+      <option value="year">Year</option>
+    </select>
+    <button (click)="getPaymentDetails(keyword)" class="btn btn-primary btm-block">
+      <i class="fa fa-search"></i>
+    </button>
+  </div>
+  <!--This section will display the search result based on the movie title given by user-->
+  <section class="d-flex flex-wrap">
+    <div *ngFor="let payment of paymentList" class="card">
+      <p>Month: {{payment.month}}</p>
+      <p>Year: {{payment.year}}</p>
+      <p>City: {{payment.city}}</p>
+      <p>Country: {{payment.country}}</p>
+      <p>Category: {{payment.category}}</p>
+      <p>Outlet: {{payment.outlet}}</p>
+      <p>Amount: {{payment.amount}}</p>
     </div>
+  </section>
 </div>
