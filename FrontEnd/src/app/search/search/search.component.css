@@ -1,52 +1,3 @@
-/* @import url(https://fonts.googleapis.com/css?family=Open+Sans);
-
-body{
-  background: #f2f2f2;
-  font-family: 'Open Sans', sans-serif;
-} 
-
-.search {
-  width: 100%;
-  position: relative;
-  display: flex;
-}
-
-.searchTerm {
-  width: 100%;
-  border: 3px solid #00B4CC;
-  border-right: none;
-  padding: 5px;
-  height: 50px;
-  border-radius: 5px 0 0 5px;
-  outline: none;
-  color: #9DBFAF;
-}
-
-.searchTerm:focus{
-  color: #00B4CC;
-} 
-
-/*Resize the wrap to see the search bar change!*/
-/* .wrap{
-  width: 30%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}  */
-
-/* .searchButton {
-  width: 40px;
-  height: 50.5px;
-  border: 1px solid #00B4CC;
-  background: #00B4CC;
-  text-align: center;
-  color: #fff;
-  border-radius: 0 5px 5px 0;
-  cursor: pointer;
-  font-size: 20px;
-} */
-
 .search-section {
   text-align: center;
   align-items: center;
@@ -58,51 +9,51 @@ body{
   height: 370px;
   align-items: center;
   border: 1px solid black;
-  background-color: lightblue;
+  background-color: #00b4cc;
   margin: 10vh 8vw;
-}
-
-.col-1 {
-  text-align: center;
+  border-radius: 10px;
 }
 
 .head-content {
   text-align: center;
 }
 
-select{
+select {
   height: 40px;
-  margin-left: 20px;
+  margin-left: 10px;
+  border: 3px solid #00b4cc;
+  border-radius: 10px;
 }
 
 button {
-  width: 40px;
-  height: 50.5px;
-  border: 1px solid #00B4CC;
-  background: #00B4CC;
-  text-align: center;
-  color: #fff;
-  border-radius: 0 5px 5px 0;
-  cursor: pointer;
-  margin-left: 20px;
+  height: 40px;
+  border: 3px solid #00b4cc;
+  margin-left: 10px;
+  border-radius: 10px;
 }
 
 input {
   width: 40%;
   display: inline-block;
   margin-top: 10px;
+  border: 3px solid #00b4cc;
+  border-radius: 10px;
 }
+
 p {
   font-size: 1.5em;
 }
 
 h2 {
   font-size: 2em;
+  font-weight: bold;
   margin-bottom: 30px;
+  color: #00b4cc;
 }
 
 .error-message {
-  color: brown;
+  margin-top: 20px;
+  color: red;
 }
 
 @media only screen and (max-width: 320px) {
@@ -112,10 +63,6 @@ h2 {
     margin: 2em;
   }
 
-  .movie-poster {
-    width: 200px;
-    height: 250px;
-  }
   p {
     font-size: 1em;
   }

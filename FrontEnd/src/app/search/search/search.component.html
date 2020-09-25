@@ -1,11 +1,11 @@
 <div class='search-section'>
   <div class="head-content">
-    <h2>Search for Payment:</h2>
+    <h2>Search for Payment</h2>
     <!--Getting input from the user-->
     <input type="text" [(ngModel)]="keyword" placeholder="Search by Outlet/Category/City/Country/Year" class="form-control" />
     <select [formControl]='searchparam'>
-      <option selected="selected" value="outlet">Outlet</option>
-      <option value="category">Category</option>
+      <option value="outlet">Outlet</option>
+      <option value="category" selected>Category</option>
       <option value="city">City</option>
       <option value="country">Country</option>
       <option value="year">Year</option>
@@ -13,6 +13,8 @@
     <button (click)="getPaymentDetails(keyword)" class="btn btn-primary btm-block">
       <i class="fa fa-search"></i>
     </button>
+    <br>
+    <label class="error-message">{{ errorMessage }}</label>
   </div>
   <!--This section will display the search result based on the movie title given by user-->
   <section class="d-flex flex-wrap">

@@ -11,7 +11,7 @@ import { RouterService } from 'src/app/services/router.service';
 })
 export class LoginComponent implements OnInit {
 
-  id = new FormControl('', Validators.compose([Validators.required, Validators.minLength(5)]));
+  id = new FormControl('', Validators.compose([Validators.required, Validators.pattern('^[A-Za-z]+(?: +[A-Za-z]+)*$')]));
   password = new FormControl('', Validators.compose([Validators.required, Validators.minLength(5)]));
   user: User;
   loginMessage: string;
@@ -36,20 +36,17 @@ export class LoginComponent implements OnInit {
           this.authService.setUserId(data['user']);
           this.routerService.routeToDashboard();
         }
-        else {
-          this.loginMessage = "Unauthorized user, register with us first";
-        }
       },
       err => {
-        this.loginMessage = err;
+        this.loginMessage = "Not Authenticated";
       }
     );
   }
   getuserIdErrorMessage() {
     if (this.id.touched && this.id.hasError('required')) {
       return 'Username is required';
-    } else if (this.id.touched && this.id.hasError('minlength')) {
-      return 'Minimum length of username should be 5';
+    } else if (this.id.touched && this.id.hasError('pattern')) {
+      return 'Username can only contain alphabetic characters';
     }
   }
   getPasswordErrorMessage() {

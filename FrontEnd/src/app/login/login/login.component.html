@@ -7,7 +7,7 @@
         </mat-expansion-panel-header>
         <form class="login-form" (submit)="loginSubmit()">
             <mat-form-field>
-                <input class="id" matInput placeholder="UserId" [formControl]="id">
+                <input class="id" matInput placeholder="Username" [formControl]="id">
                 <mat-error *ngIf="id.invalid">{{ getuserIdErrorMessage() }}</mat-error>
             </mat-form-field>
             <mat-form-field>
