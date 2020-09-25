@@ -1,97 +1,78 @@
 <div class="main">
-    <!-- <img class="hero-unit" src="../../../assets/images/natwest.jpg" alt="" >  -->
+  <!-- <img class="hero-unit" src="../../../assets/images/natwest.jpg" alt="" >  -->
+  
+  <div class="topnav">
+      <img class="img-logo" src="../../../assets/images/natwest-logo.png" alt="">
+      <div class="topnav-links">
+          <a href="#products">Products</a>
+          <a href="#Helpandsupport">Help and Support</a>
+          <a href="#bankingwithus">Banking with us</a>
+          <a href="#gettheapp">Get the app</a>
+      </div>
+      <input type="text" placeholder="Search..">
+  </div>
+
+  <ngb-carousel>
+
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img class="img" src="../../../assets/images/hero-unit/laptop-travel.jpg" alt="">
+      </div>
+      <div class="carousel-caption">
+        <h3>First slide label</h3>
+        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+      </div>
+    </ng-template>
     
-    <div class="topnav">
-        <img class="img-logo" src="../../../assets/images/natwest-logo.png" alt="">
-        <div class="topnav-links">
-            <a href="#products">Products</a>
-            <a href="#Helpandsupport">Help and Support</a>
-            <a href="#bankingwithus">Banking with us</a>
-            <a href="#gettheapp">Get the app</a>
-        </div>
-        <input type="text" placeholder="Search..">
-    </div>
-
-   
-    <!-- <ngb-carousel *ngIf="images">
-      <ng-template ngbSlide>
-        <div class="picsum-img-wrapper">
-          <img [src]="images[0]" alt="Random first slide">
-        </div>
-        <div class="carousel-caption">
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </div>
-      </ng-template>
-      <ng-template ngbSlide>
-        <div class="picsum-img-wrapper">
-          <img [src]="images[1]" alt="Random second slide">
-        </div>
-        <div class="carousel-caption">
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-      </ng-template>
-      <ng-template ngbSlide>
-        <div class="picsum-img-wrapper">
-          <img [src]="images[2]" alt="Random third slide">
-        </div>
-        <div class="carousel-caption">
-          <h3>Third slide label</h3>
-          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-        </div>
-      </ng-template>
-    </ngb-carousel> -->
-
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img class="img" src="../../../assets/images/natwest.jpg" alt="">
+      </div>
+      <div class="carousel-caption">
+        <h3>Second slide label</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </ng-template>
     
-    <!--Card Layout-->
-    <div class="card-component">
-        
-      <div class="title-card">
-          <h3>Choose the card that works for you</h3>
-        </div>
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img class="img" src="../../../assets/images/hero-unit/airport-Lounge-Access.jpg" alt="Random third slide">
+      </div>
+      <div class="carousel-caption">
+        <h3>Third slide label</h3>
+        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+      </div>
+    </ng-template>
+  
+</ngb-carousel>
+ 
 
-        <div class="card-flex">
+  <!--Card Layout-->
+  <div class="card-component">
+       
+    <div class="title-card">
+        <h3>Choose the card that works for you</h3>
+      </div>
 
-          <mat-card class="example-card">
-              <mat-card-header>
-              <div mat-card-avatar class="example-header-image"></div>
-              <mat-card-title>Platinum Card</mat-card-title>
-              <mat-card-subtitle>International Travel Card</mat-card-subtitle>
-              </mat-card-header>
-              <img mat-card-image src="../../../assets/images/dashboard-card.jpg" alt="Photo of a Shiba Inu">
-              <mat-card-content>
-                <div class="card-info1">
-                  <p class="annual-fee">
-                    No Annual Fee <br>
-                    Card limit per day : 1 lakh <br>
-                  </p>
-                  <ul>
-                    <li>5 Reward Points for every <br> ₹ 150 spent </li>
-                    <hr>
-                    <li>Complimentary Annual memberships of MMTBLACK</li>
-                  </ul>  
-                </div>
-              </mat-card-content>
-          </mat-card>
+      <div class="card-flex">
 
-          <mat-card class="example-card">
+        <mat-card class="example-card">
             <mat-card-header>
             <div mat-card-avatar class="example-header-image"></div>
-            <mat-card-title>Sapphire Card</mat-card-title>
+            <mat-card-title>Platinum Card</mat-card-title>
             <mat-card-subtitle>International Travel Card</mat-card-subtitle>
             </mat-card-header>
-            <img mat-card-image src="../../../assets/images/natwest-card-image.jfif" alt="Photo of a Shiba Inu">
+            <img mat-card-image src="../../../assets/images/dashboard-card.jpg" alt="Photo of a Shiba Inu">
             <mat-card-content>
               <div class="card-info1">
                 <p class="annual-fee">
-                  Annual Fees : ₹ 250 <br>
-                  Card limit per day : 5 lakh <br>
+                  No Annual Fee <br>
+                  Card limit per day : 1 lakh <br>
                 </p>
                 <ul>
-                  <li>10 Reward Points for every <br> ₹ 150 spent</li>
+                  <li>5 Reward Points for every <br> ₹ 150 spent </li>
                   <hr>
-                  <li>Unlimited airport lounge access across the globe</li>
+                  <li>Complimentary Annual memberships of MMTBLACK</li>
                 </ul>  
               </div>
             </mat-card-content>
@@ -100,26 +81,48 @@
         <mat-card class="example-card">
           <mat-card-header>
           <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>Millennia Card</mat-card-title>
+          <mat-card-title>Sapphire Card</mat-card-title>
           <mat-card-subtitle>International Travel Card</mat-card-subtitle>
           </mat-card-header>
-          <img mat-card-image src="../../../assets/images/natwest-card-image3.jfif" alt="Photo of a Shiba Inu">
+          <img mat-card-image src="../../../assets/images/natwest-card-image.jfif" alt="Photo of a Shiba Inu">
           <mat-card-content>
-          <div class="card-info1">
-            <p class="annual-fee">
-              Annual Fees : ₹ 750 <br>
-              Card limit per day : 10 lakh <br>
-            </p>
-            <ul>
-              <li>30 Reward Points for every <br> ₹ 150 spent</li>
-              <hr>
-              <li>Annual memberships of Amazon Prime, Zomato Gold</li>
-            </ul>  
-          </div>
+            <div class="card-info1">
+              <p class="annual-fee">
+                Annual Fees : ₹ 250 <br>
+                Card limit per day : 5 lakh <br>
+              </p>
+              <ul>
+                <li>10 Reward Points for every <br> ₹ 150 spent</li>
+                <hr>
+                <li>Unlimited airport lounge access across the globe</li>
+              </ul>  
+            </div>
           </mat-card-content>
-        </mat-card>
-  
-      </div>
+      </mat-card>
+
+      <mat-card class="example-card">
+        <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Millennia Card</mat-card-title>
+        <mat-card-subtitle>International Travel Card</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="../../../assets/images/natwest-card-image3.jfif" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+        <div class="card-info1">
+          <p class="annual-fee">
+            Annual Fees : ₹ 750 <br>
+            Card limit per day : 10 lakh <br>
+          </p>
+          <ul>
+            <li>30 Reward Points for every <br> ₹ 150 spent</li>
+            <hr>
+            <li>Annual memberships of Amazon Prime, Zomato Gold</li>
+          </ul>  
+        </div>
+        </mat-card-content>
+      </mat-card>
+
     </div>
-  
+  </div>
+
 </div>

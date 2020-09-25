@@ -84,8 +84,9 @@
 .card-component {
   background-image: url('../../../assets/images/sea.jfif');
   position: absolute;
-  height: 92%;
+  height: 100%;
   width: 100%;
+  margin-bottom: 0%;
 }
 
 .card-info1 {
@@ -137,4 +138,10 @@
 
 #card-limit {
   margin-left: 1em;
+}
+
+
+.img {
+  height: 625px;
+  width: 1366px;
 }

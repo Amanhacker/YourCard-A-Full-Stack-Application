@@ -23,6 +23,7 @@ import { ContactusModule } from './contactus/contactus.module';
 import { SearchModule } from './search/search.module';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MatCarouselModule } from '@ngmodule/material-carousel';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    SearchModule
+    SearchModule,
+    MatCarouselModule
   ],
   providers: [HttpClientModule, RouterService],
   bootstrap: [AppComponent]
