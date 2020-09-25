@@ -1,0 +1,62 @@
+<mat-expansion-panel class='add-payment-panel'>
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            New Payment
+        </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div class="payment-form">
+    
+        <!-- <mat-form-field>
+            <input [formControl]='id' matInput placeholder="Payment ID">
+        </mat-form-field>
+        <br> -->
+
+        <mat-form-field>
+            <input [formControl]='month' matInput placeholder="Month">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+            <input [formControl]='year' matInput placeholder="Year">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+            <input [formControl]='city' matInput placeholder="City">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+            <input [formControl]='country' matInput placeholder="Country">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+            <mat-select [formControl]='category' placeholder="Payment Category">
+                <mat-option value="Food">Food</mat-option>
+                <mat-option value="Entertainment">Entertainment</mat-option>
+                <mat-option value="Shopping">Shopping</mat-option>
+                <mat-option value="HotelStay">Hotel Stay</mat-option>
+                <mat-option value="ATM">ATM Withdrawal</mat-option>
+                <mat-option value="Others">Others</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br>
+
+
+        <mat-form-field>
+            <input [formControl]='outlet' matInput placeholder="Outlet">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+            <input [formControl]='amount' matInput placeholder="Amount">
+        </mat-form-field>
+        <br>
+        
+
+        <button mat-fab color="primary" class="add-payment" (click)='addPayment()'>Add</button>
+
+    </div>
+
+</mat-expansion-panel>

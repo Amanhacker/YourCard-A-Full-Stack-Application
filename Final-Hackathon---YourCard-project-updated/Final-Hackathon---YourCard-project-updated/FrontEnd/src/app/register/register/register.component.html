@@ -1,0 +1,70 @@
+<div class="main">
+<mat-expansion-panel class='add-register-panel'>
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            Registration Form
+        </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div class="registration-form">
+    
+        <mat-form-field>
+            <input [formControl]='id' required matInput placeholder="Name">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+            <input [formControl]='DOB' required matInput placeholder="Date of Birth">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+            <input [formControl]='aadharNo' required matInput placeholder="Aadhar No.">
+        </mat-form-field>
+        <br>
+        
+        <mat-form-field>
+            <input [formControl]='panNo' required matInput placeholder="Pan No.">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+            <input [formControl]='houseNo' required matInput placeholder="House No.">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+            <input [formControl]='district' required matInput placeholder="District">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+            <input [formControl]='state' required matInput placeholder="State">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+            <input [formControl]='country' required matInput placeholder="Country">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+            <input [formControl]='password' type="password" required matInput placeholder="Password">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+            <input [formControl]='password' type="password" required matInput placeholder=" Confirm Password">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+            <input [formControl]='amount' required matInput placeholder=" Card Amount">
+        </mat-form-field>
+        <br>
+        
+        <button mat-fab color="primary" class="register" (click)='register()'>Register</button>
+
+    </div>
+
+</mat-expansion-panel>
+</div>
