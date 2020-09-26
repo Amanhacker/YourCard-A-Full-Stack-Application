@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
-  
+
   loginSubmit() {
     let token;
     this.user = {
@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
         }
       },
       err => {
-        this.loginMessage = "Not Authenticated";
+        this.loginMessage = "Not authorized, check your details again!";
       }
     );
   }

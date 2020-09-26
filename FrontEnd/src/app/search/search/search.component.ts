@@ -11,7 +11,7 @@ import { SearchService } from 'src/app/services/search.service';
 })
 export class SearchComponent implements OnInit {
 
-  paymentList: Payment[] = [];
+  paymentList;
   errorMessage: string;
   searchparam = new FormControl();
 
@@ -24,25 +24,55 @@ export class SearchComponent implements OnInit {
     let param;
     param = this.searchparam.value;
     if (param == "outlet") {
-      this.searchService.searchPaymentsByOutlet(this.authService.getUserId(), keyword)
-        .then(response => this.paymentList = response);
+      this.searchService.searchPaymentsByOutlet(this.authService.getUserId(), keyword).subscribe(
+        data => {
+          this.paymentList = data;
+        },
+        err => {
+          this.errorMessage = err.message;
+        }
+      );
     }
     else if (param == "category") {
-      this.searchService.searchPaymentsByCategory(this.authService.getUserId(), keyword)
-        .then(response => this.paymentList = response);
+      this.searchService.searchPaymentsByCategory(this.authService.getUserId(), keyword).subscribe(
+        data => {
+          this.paymentList = data;
+        },
+        err => {
+          this.errorMessage = err.message;
+        }
+      );
     }
     else if (param == "city") {
-      this.searchService.searchPaymentsByCity(this.authService.getUserId(), keyword)
-        .then(response => this.paymentList = response);
-        console.log(this.paymentList);
+      this.searchService.searchPaymentsByCity(this.authService.getUserId(), keyword).subscribe(
+        data => {
+          this.paymentList = data;
+        },
+        err => {
+          this.errorMessage = err.message;
+        }
+      );
     }
     else if (param == "country") {
-      this.searchService.searchPaymentsByCountry(this.authService.getUserId(), keyword)
-        .then(response => this.paymentList = response);
+      this.searchService.searchPaymentsByCountry(this.authService.getUserId(), keyword).subscribe(
+        data => {
+          this.paymentList = data;
+        },
+        err => {
+          this.errorMessage = err.message;
+        }
+      );
     }
     else if (param == "year") {
-      this.searchService.searchPaymentsByYear(this.authService.getUserId(), keyword)
-        .then(response => this.paymentList = response);
+      this.searchService.searchPaymentsByYear(this.authService.getUserId(), keyword).subscribe(
+        data => {
+          this.paymentList = data;
+        },
+        err => {
+          this.errorMessage = err.message;
+        }
+      );
     }
+
   }
 }
