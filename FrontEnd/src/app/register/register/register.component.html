@@ -6,13 +6,13 @@
             </mat-panel-title>
         </mat-expansion-panel-header>
         <div class="registration-form">
-        
+
             <mat-form-field>
                 <input [formControl]='id' required matInput placeholder="Name">
                 <mat-error *ngIf="id.invalid">{{ getIdErrorMessage() }}</mat-error>
             </mat-form-field>
             <br>
-    
+
             <mat-form-field>
                 <!-- <input [formControl]='DOB' required matInput placeholder="Date of Birth (dd/mm/yyyy)"> -->
                 <input matInput [matDatepicker]="picker" [formControl]='DOB' required placeholder="Pick your Date of Birth">
@@ -21,55 +21,55 @@
                 <mat-error *ngIf="DOB.invalid">{{ getDOBErrorMessage() }}</mat-error>
             </mat-form-field>
             <br>
-    
+
             <mat-form-field>
                 <input [formControl]='aadharNo' required matInput placeholder="Aadhar No.">
                 <mat-error *ngIf="aadharNo.invalid">{{ getAadharNoErrorMessage() }}</mat-error>
             </mat-form-field>
             <br>
-            
+
             <mat-form-field>
                 <input [formControl]='panNo' required matInput placeholder="Pan No.">
                 <mat-error *ngIf="panNo.invalid">{{ getPanNoErrorMessage() }}</mat-error>
             </mat-form-field>
             <br>
-    
+
             <mat-form-field>
                 <input [formControl]='houseNo' required matInput placeholder="House No.">
                 <mat-error *ngIf="houseNo.invalid">{{ getHouseNoErrorMessage() }}</mat-error>
             </mat-form-field>
             <br>
-    
+
             <mat-form-field>
                 <input [formControl]='district' required matInput placeholder="District">
                 <mat-error *ngIf="district.invalid">{{ getDistrictErrorMessage() }}</mat-error>
             </mat-form-field>
             <br>
-    
+
             <mat-form-field>
                 <input [formControl]='state' required matInput placeholder="State">
                 <mat-error *ngIf="state.invalid">{{ getStateErrorMessage() }}</mat-error>
             </mat-form-field>
             <br>
-    
+
             <mat-form-field>
                 <input [formControl]='country' required matInput placeholder="Country">
                 <mat-error *ngIf="country.invalid">{{ getCountryErrorMessage() }}</mat-error>
             </mat-form-field>
             <br>
-    
+
             <mat-form-field>
                 <input [formControl]='password' type="password" required matInput placeholder="Password">
                 <mat-error *ngIf="password.invalid">{{ getPasswordErrorMessage() }}</mat-error>
             </mat-form-field>
             <br>
-    
+
             <mat-form-field>
                 <input [formControl]='conpassword' type="password" required matInput placeholder=" Confirm Password">
                 <mat-error *ngIf="conpassword.invalid">{{ getConPasswordErrorMessage() }}</mat-error>
             </mat-form-field>
             <br>
-    
+
             <mat-form-field>
                 <input [formControl]='amount' required matInput placeholder=" Card Amount">
                 <mat-error *ngIf="amount.invalid">{{ getAmountErrorMessage() }}</mat-error>
@@ -78,8 +78,8 @@
             <label class="error-message">{{ registerMessage }}</label>
             <br>
             <button mat-fab color="primary" class="register" (click)='register()'>Register</button>
-    
+
         </div>
-    
+
     </mat-expansion-panel>
-    </div>
+</div>
