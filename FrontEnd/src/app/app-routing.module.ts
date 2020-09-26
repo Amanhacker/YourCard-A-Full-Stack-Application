@@ -8,7 +8,7 @@ import { PagenotfoundexceptionComponent } from './pagenotfoundexception/pagenotf
 import { HomeComponent } from './home/home/home.component';
 import { ContactusComponent } from './contactus/contactus/contactus.component';
 import { SearchComponent } from './search/search/search.component';
-
+import { SubmittedComponent } from './submitted/submitted/submitted.component';
 
 const routes: Routes =  [
 
@@ -19,10 +19,11 @@ const routes: Routes =  [
   { path: 'home', component: HomeComponent },
   { path: 'search', component: SearchComponent },
   { path: 'contactus', component: ContactusComponent },
+  { path: 'submitted', component: SubmittedComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: PagenotfoundexceptionComponent}
 ];
-
+ 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
