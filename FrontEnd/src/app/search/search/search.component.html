@@ -2,13 +2,18 @@
   <div class="head-content">
     <h2>Search for Payment</h2>
     <!--Getting input from the user-->
-    <input type="text" [(ngModel)]="keyword" placeholder="Search by Outlet/Category/City/Country/Year" class="form-control" />
+    <input type="text" [(ngModel)]="keyword" placeholder="Search by Outlet/Category/City/Country/Year"
+      class="form-control" />
     <select [formControl]='searchparam'>
+      <option class="default" value="none" selected disabled hidden>
+        Select an Option
+      </option>
       <option value="outlet">Outlet</option>
-      <option value="category" selected>Category</option>
+      <option value="category">Category</option>
       <option value="city">City</option>
       <option value="country">Country</option>
       <option value="year">Year</option>
+      <option value="month">Month</option>
     </select>
     <button (click)="getPaymentDetails(keyword)" class="btn btn-primary btm-block">
       <i class="fa fa-search"></i>
@@ -16,7 +21,7 @@
     <br>
     <label class="error-message">{{ errorMessage }}</label>
   </div>
-  <!--This section will display the search result based on the movie title given by user-->
+  <!--This section will display the search result based on the search keyword given by the user-->
   <section class="d-flex flex-wrap">
     <div *ngFor="let payment of paymentList" class="card">
       <p>Month: {{payment.month}}</p>

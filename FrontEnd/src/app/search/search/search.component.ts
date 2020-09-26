@@ -15,7 +15,10 @@ export class SearchComponent implements OnInit {
   errorMessage: string;
   searchparam = new FormControl();
 
-  constructor(private searchService: SearchService, private authService: AuthenticationService) { }
+  constructor(private searchService: SearchService, private authService: AuthenticationService) { 
+    this.errorMessage='';
+    this.paymentList=null;
+  }
 
   ngOnInit() {
   }
@@ -23,13 +26,15 @@ export class SearchComponent implements OnInit {
   getPaymentDetails(keyword) {
     let param;
     param = this.searchparam.value;
+    this.errorMessage='';
+    this.paymentList=null;
     if (param == "outlet") {
       this.searchService.searchPaymentsByOutlet(this.authService.getUserId(), keyword).subscribe(
         data => {
           this.paymentList = data;
         },
         err => {
-          this.errorMessage = err.message;
+          this.errorMessage = "OOPS! Payment details with the given outlet name is not found";
         }
       );
     }
@@ -39,7 +44,7 @@ export class SearchComponent implements OnInit {
           this.paymentList = data;
         },
         err => {
-          this.errorMessage = err.message;
+          this.errorMessage = "OOPS! Payment details with the given category is not found";
         }
       );
     }
@@ -49,7 +54,7 @@ export class SearchComponent implements OnInit {
           this.paymentList = data;
         },
         err => {
-          this.errorMessage = err.message;
+          this.errorMessage = "OOPS! Payment details with the given city name is not found";
         }
       );
     }
@@ -59,7 +64,7 @@ export class SearchComponent implements OnInit {
           this.paymentList = data;
         },
         err => {
-          this.errorMessage = err.message;
+          this.errorMessage = "OOPS! Payment details with the given country name is not found";
         }
       );
     }
@@ -69,7 +74,17 @@ export class SearchComponent implements OnInit {
           this.paymentList = data;
         },
         err => {
-          this.errorMessage = err.message;
+          this.errorMessage = "OOPS! Payment details  with the given year is not found";
+        }
+      );
+    }
+    else if (param == "month") {
+      this.searchService.searchPaymentsByMonth(this.authService.getUserId(), keyword).subscribe(
+        data => {
+          this.paymentList = data;
+        },
+        err => {
+          this.errorMessage = "OOPS! Payment details with the given month is not found";
         }
       );
     }

@@ -24,7 +24,12 @@ export class SearchService {
   searchPaymentsByCountry(userId, country) {
     return this.httpClient.get(`http://localhost:8765/paymentservice/allPaymentsByCountry/${userId}/${country}`);
   }
+
   searchPaymentsByYear(userId, year) {
     return this.httpClient.get(`http://localhost:8765/paymentservice/allPaymentsByYear/${userId}/${year}`);
+  }
+
+  searchPaymentsByMonth(userId, month) {
+    return this.httpClient.get(`http://localhost:8765/paymentservice/allPaymentsByMonth/${userId}/${month}`);
   }
 }

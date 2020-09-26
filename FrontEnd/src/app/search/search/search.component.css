@@ -56,6 +56,10 @@ h2 {
   color: red;
 }
 
+.default {
+  color: black;
+}
+
 @media only screen and (max-width: 320px) {
   .card {
     width: 300px;

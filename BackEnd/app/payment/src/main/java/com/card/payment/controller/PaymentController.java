@@ -1,7 +1,7 @@
 package com.card.payment.controller;
 
 import com.card.payment.domain.Payment;
-import com.card.payment.exception.UserNotFoundException;
+import com.card.payment.exception.*;
 import com.card.payment.service.IPaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -51,6 +51,8 @@ public class PaymentController {
             responseEntity = new ResponseEntity(paymentListByOutletName, HttpStatus.OK);
         } catch (UserNotFoundException e) {
             responseEntity = new ResponseEntity(e.getMessage(), HttpStatus.NOT_FOUND);
+        } catch (OutletNotFoundException e) {
+            responseEntity = new ResponseEntity(e.getMessage(), HttpStatus.NOT_FOUND);
         } catch (Exception e) {
             responseEntity = new ResponseEntity(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
@@ -65,6 +67,8 @@ public class PaymentController {
             List<Payment> paymentListByCountryName = paymentService.getAllPaymentsByCountry(userId, country);
             responseEntity = new ResponseEntity(paymentListByCountryName, HttpStatus.OK);
         } catch (UserNotFoundException e) {
+            responseEntity = new ResponseEntity(e.getMessage(), HttpStatus.NOT_FOUND);
+        } catch (CountryNotFoundException e) {
             responseEntity = new ResponseEntity(e.getMessage(), HttpStatus.NOT_FOUND);
         } catch (Exception e) {
             responseEntity = new ResponseEntity(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
@@ -81,7 +85,10 @@ public class PaymentController {
             responseEntity = new ResponseEntity(paymentListByCategoryName, HttpStatus.OK);
         } catch (UserNotFoundException e) {
             responseEntity = new ResponseEntity(e.getMessage(), HttpStatus.NOT_FOUND);
-        } catch (Exception e) {
+        } catch (CategoryNotFoundException e) {
+            responseEntity = new ResponseEntity(e.getMessage(), HttpStatus.NOT_FOUND);
+        }
+        catch (Exception e) {
             responseEntity = new ResponseEntity(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
 
@@ -95,6 +102,8 @@ public class PaymentController {
             List<Payment> paymentListByCityName = paymentService.getAllPaymentsByCity(userId, city);
             responseEntity = new ResponseEntity(paymentListByCityName, HttpStatus.OK);
         } catch (UserNotFoundException e) {
+            responseEntity = new ResponseEntity(e.getMessage(), HttpStatus.NOT_FOUND);
+        } catch ( CityNotFoundException e) {
             responseEntity = new ResponseEntity(e.getMessage(), HttpStatus.NOT_FOUND);
         } catch (Exception e) {
             responseEntity = new ResponseEntity(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
@@ -111,10 +120,28 @@ public class PaymentController {
             responseEntity = new ResponseEntity(paymentListByYear, HttpStatus.OK);
         } catch (UserNotFoundException e) {
             responseEntity = new ResponseEntity(e.getMessage(), HttpStatus.NOT_FOUND);
+        } catch (YearNotFoundException e) {
+            responseEntity = new ResponseEntity(e.getMessage(), HttpStatus.NOT_FOUND);
         } catch (Exception e) {
             responseEntity = new ResponseEntity(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
 
+        return responseEntity;
+    }
+
+    @GetMapping("/allPaymentsByMonth/{userId}/{month}")
+    public ResponseEntity<?> getAllPaymentsByMonth(@PathVariable String userId, @PathVariable String month) {
+
+        try {
+            List<Payment> paymentListByMonth = paymentService.getAllPaymentsByMonth(userId, month);
+            responseEntity = new ResponseEntity(paymentListByMonth, HttpStatus.OK);
+        } catch (UserNotFoundException e) {
+            responseEntity = new ResponseEntity(e.getMessage(), HttpStatus.NOT_FOUND);
+        } catch (MonthNotFoundException e) {
+            responseEntity = new ResponseEntity(e.getMessage(), HttpStatus.NOT_FOUND);
+        } catch (Exception e) {
+            responseEntity = new ResponseEntity(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
         return responseEntity;
     }
 
