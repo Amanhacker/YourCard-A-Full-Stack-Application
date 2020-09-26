@@ -15,7 +15,7 @@ export class RegisterComponent implements OnInit {
   user: User;
 
   id = new FormControl('', Validators.compose([Validators.required, Validators.pattern('^[A-Za-z]+(?: +[A-Za-z]+)*$')]));
-  DOB = new FormControl('', Validators.compose([Validators.required, Validators.pattern('^[0-3]{1}[0-9]{1}/[0-1]{1}[0-9]{1}/[0-9]{4}$')]));
+  DOB = new FormControl('', Validators.compose([Validators.required]));
   aadharNo = new FormControl('', Validators.compose([Validators.required, Validators.pattern('^[0-9]{16}$')]));
   panNo = new FormControl('', Validators.compose([Validators.required, Validators.pattern('[A-Z]{5}[0-9]{4}[A-Z]{1}')]));
   houseNo = new FormControl('', Validators.compose([Validators.required]));
@@ -52,7 +52,7 @@ export class RegisterComponent implements OnInit {
         this.routerService.routeToLogin();
       },
       err => {
-        this.registerMessage = "You're already registered";
+        this.registerMessage = "You're already registered, try login instead!";
       }
     );
   }
@@ -69,11 +69,8 @@ export class RegisterComponent implements OnInit {
   getDOBErrorMessage() {
     if (this.DOB.touched && this.DOB.hasError('required')) {
       return 'Date of Birth is required';
-    } else if (this.DOB.touched && this.DOB.hasError('pattern')) {
-      return 'Date of Birth should be in dd/mm/yyyy format';
     }
   }
-
 
   getAadharNoErrorMessage() {
     if (this.aadharNo.touched && this.aadharNo.hasError('required')) {

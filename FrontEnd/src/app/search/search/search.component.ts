@@ -11,11 +11,14 @@ import { SearchService } from 'src/app/services/search.service';
 })
 export class SearchComponent implements OnInit {
 
-  paymentList: Payment[] = [];
+  paymentList;
   errorMessage: string;
   searchparam = new FormControl();
 
-  constructor(private searchService: SearchService, private authService: AuthenticationService) { }
+  constructor(private searchService: SearchService, private authService: AuthenticationService) { 
+    this.errorMessage='';
+    this.paymentList=null;
+  }
 
   ngOnInit() {
   }
@@ -23,26 +26,68 @@ export class SearchComponent implements OnInit {
   getPaymentDetails(keyword) {
     let param;
     param = this.searchparam.value;
+    this.errorMessage='';
+    this.paymentList=null;
     if (param == "outlet") {
-      this.searchService.searchPaymentsByOutlet(this.authService.getUserId(), keyword)
-        .then(response => this.paymentList = response);
+      this.searchService.searchPaymentsByOutlet(this.authService.getUserId(), keyword).subscribe(
+        data => {
+          this.paymentList = data;
+        },
+        err => {
+          this.errorMessage = "OOPS! Payment details with the given outlet name is not found";
+        }
+      );
     }
     else if (param == "category") {
-      this.searchService.searchPaymentsByCategory(this.authService.getUserId(), keyword)
-        .then(response => this.paymentList = response);
+      this.searchService.searchPaymentsByCategory(this.authService.getUserId(), keyword).subscribe(
+        data => {
+          this.paymentList = data;
+        },
+        err => {
+          this.errorMessage = "OOPS! Payment details with the given category is not found";
+        }
+      );
     }
     else if (param == "city") {
-      this.searchService.searchPaymentsByCity(this.authService.getUserId(), keyword)
-        .then(response => this.paymentList = response);
-        console.log(this.paymentList);
+      this.searchService.searchPaymentsByCity(this.authService.getUserId(), keyword).subscribe(
+        data => {
+          this.paymentList = data;
+        },
+        err => {
+          this.errorMessage = "OOPS! Payment details with the given city name is not found";
+        }
+      );
     }
     else if (param == "country") {
-      this.searchService.searchPaymentsByCountry(this.authService.getUserId(), keyword)
-        .then(response => this.paymentList = response);
+      this.searchService.searchPaymentsByCountry(this.authService.getUserId(), keyword).subscribe(
+        data => {
+          this.paymentList = data;
+        },
+        err => {
+          this.errorMessage = "OOPS! Payment details with the given country name is not found";
+        }
+      );
     }
     else if (param == "year") {
-      this.searchService.searchPaymentsByYear(this.authService.getUserId(), keyword)
-        .then(response => this.paymentList = response);
+      this.searchService.searchPaymentsByYear(this.authService.getUserId(), keyword).subscribe(
+        data => {
+          this.paymentList = data;
+        },
+        err => {
+          this.errorMessage = "OOPS! Payment details  with the given year is not found";
+        }
+      );
     }
+    else if (param == "month") {
+      this.searchService.searchPaymentsByMonth(this.authService.getUserId(), keyword).subscribe(
+        data => {
+          this.paymentList = data;
+        },
+        err => {
+          this.errorMessage = "OOPS! Payment details with the given month is not found";
+        }
+      );
+    }
+
   }
 }

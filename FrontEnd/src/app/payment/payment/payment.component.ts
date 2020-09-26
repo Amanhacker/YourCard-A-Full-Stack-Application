@@ -45,12 +45,11 @@ export class PaymentComponent implements OnInit {
       amount: this.amount.value,
     };
     this.paymentService.addUserPaymentData(this.payment).subscribe(
-      (data) => {
-        console.log(data);
+      data => {
         this.paymentMessage = "Payment successful"
         this.routerService.routeToDashboard();
       },
-      (error) => {
+      error => {
         this.paymentMessage = error.message;
       }
     );

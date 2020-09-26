@@ -53,8 +53,8 @@ export class DashboardComponent implements OnInit {
         datasets: [
           {
             label: "Amount($) in thousands spent in different months",
-            data: [12, 19, 3, 5, 2, 3, 1, 3, 5, 10, 17, 20], // function that calculates and return list
-            //data: this.monthlyStatistic(),
+            //data: [12, 19, 3, 5, 2, 3, 1, 3, 5, 10, 17, 20], // function that calculates and return list
+            data: this.monthlyStatistic(),
             backgroundColor: [
               "rgba(255, 99, 132, 0.2)",
               "rgba(54, 162, 235, 0.2)",
