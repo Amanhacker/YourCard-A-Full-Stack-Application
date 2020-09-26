@@ -24,6 +24,7 @@ import { SearchModule } from './search/search.module';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatCarouselModule } from '@ngmodule/material-carousel';
+import { SubmittedModule } from './submitted/submitted.module';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { MatCarouselModule } from '@ngmodule/material-carousel';
     MatIconModule,
     MatListModule,
     SearchModule,
-    MatCarouselModule
+    MatCarouselModule,
+    SubmittedModule
   ],
   providers: [HttpClientModule, RouterService],
   bootstrap: [AppComponent]

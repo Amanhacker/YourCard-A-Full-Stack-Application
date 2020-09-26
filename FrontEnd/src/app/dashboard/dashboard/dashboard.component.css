@@ -42,4 +42,9 @@
 
   .card-flex {
       display: flex;
+      background-color: rgb(240, 234, 234);
+  }
+
+  .flex-container {
+    background-color: rgb(240, 234, 234);
   }

@@ -16,8 +16,8 @@ export class ContactusComponent implements OnInit {
   }
 
   submit() {
-//    this.routerService.routeToHome();
-    this.router.navigate(['/home']);
+    this.routerService.routeToSubmitted();
+    this.router.navigate(['/submitted']);
   }
 
 }

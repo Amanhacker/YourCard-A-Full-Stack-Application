@@ -12,6 +12,10 @@ export class RouterService {
     this.router.navigate(['/home']);
   }
 
+  routeToSubmitted() {
+    this.router.navigate(['/submitted']);
+  }
+
   routeToSearch() {
     this.router.navigate(['/search']);
   }

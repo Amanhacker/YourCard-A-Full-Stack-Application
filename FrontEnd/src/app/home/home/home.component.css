@@ -145,3 +145,12 @@
   height: 625px;
   width: 1366px;
 }
+
+#desc {
+  color: black;
+  font-weight: bold;
+}
+
+#opaq-img {
+  opacity: 0.9;
+}
