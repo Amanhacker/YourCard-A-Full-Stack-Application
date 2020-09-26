@@ -27,7 +27,8 @@
   } */
 
 .footer-section-container {
-    margin-top: 91.8vh;
+    /* margin-top: 91.8vh; */
+    margin-top: 0%;
     background-color:rgb(51, 41, 143);
     height: 45vh;
     width: 100%;

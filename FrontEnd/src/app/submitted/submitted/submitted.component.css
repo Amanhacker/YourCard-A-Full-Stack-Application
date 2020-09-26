@@ -1,4 +1,6 @@
-
+.container {
+    margin-bottom: 65vh;
+}
 body { 
     background-image: rgb(252, 244, 244);
 }
