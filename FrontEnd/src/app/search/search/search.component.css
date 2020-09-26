@@ -1,7 +1,8 @@
 .search-section {
   text-align: center;
   align-items: center;
-  margin-top: 20vh;
+  margin-top: 25vh;
+  margin-bottom: 50vh;
 }
 
 .card {
@@ -54,10 +55,6 @@ h2 {
 .error-message {
   margin-top: 20px;
   color: red;
-}
-
-.default {
-  color: black;
 }
 
 @media only screen and (max-width: 320px) {
