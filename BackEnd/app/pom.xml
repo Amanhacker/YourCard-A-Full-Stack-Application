@@ -72,6 +72,7 @@
 		<module>payment</module>
 		<module>servicediscovery</module>
 		<module>userauthentication</module>
+		<module>contact</module>
 	</modules>
 
 </project>

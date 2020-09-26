@@ -15,8 +15,8 @@ export class RegisterComponent implements OnInit {
   user: User;
 
   id = new FormControl('', Validators.compose([Validators.required, Validators.pattern('^[A-Za-z]+(?: +[A-Za-z]+)*$')]));
-  DOB = new FormControl('', Validators.compose([Validators.required]));
-  aadharNo = new FormControl('', Validators.compose([Validators.required, Validators.pattern('^[0-9]{16}$')]));
+  dob = new FormControl('', Validators.compose([Validators.required]));
+  aadhaarNo = new FormControl('', Validators.compose([Validators.required, Validators.pattern('^[0-9]{12}$')]));
   panNo = new FormControl('', Validators.compose([Validators.required, Validators.pattern('[A-Z]{5}[0-9]{4}[A-Z]{1}')]));
   houseNo = new FormControl('', Validators.compose([Validators.required]));
   district = new FormControl('', Validators.compose([Validators.required, Validators.pattern('^[A-Za-z]+(?: +[A-Za-z]+)*$')]));
@@ -35,8 +35,8 @@ export class RegisterComponent implements OnInit {
   register() {
     this.user = {
       id: this.id.value,
-      DOB: this.DOB.value,
-      aadharNo: this.aadharNo.value,
+      dob: this.dob.value,
+      aadhaarNo: this.aadhaarNo.value,
       panNo: this.panNo.value,
       houseNo: this.houseNo.value,
       district: this.district.value,
@@ -66,17 +66,17 @@ export class RegisterComponent implements OnInit {
     }
   }
 
-  getDOBErrorMessage() {
-    if (this.DOB.touched && this.DOB.hasError('required')) {
+  getDobErrorMessage() {
+    if (this.dob.touched && this.dob.hasError('required')) {
       return 'Date of Birth is required';
     }
   }
 
-  getAadharNoErrorMessage() {
-    if (this.aadharNo.touched && this.aadharNo.hasError('required')) {
-      return 'Aadhar no. is required';
-    } else if (this.aadharNo.touched && this.aadharNo.hasError('pattern')) {
-      return 'Aadhar number should contain only numeric characters of 16 digits';
+  getAadhaarNoErrorMessage() {
+    if (this.aadhaarNo.touched && this.aadhaarNo.hasError('required')) {
+      return 'Aadhaar no. is required';
+    } else if (this.aadhaarNo.touched && this.aadhaarNo.hasError('pattern')) {
+      return 'Aadhaar number should contain only 12 numeric characters';
     }
   }
 

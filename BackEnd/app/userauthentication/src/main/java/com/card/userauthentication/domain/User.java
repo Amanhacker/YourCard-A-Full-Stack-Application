@@ -8,8 +8,8 @@ public class User {
 
     @Id
     private String id;
-    private String DOB;
-    private String aadharNo;
+    private String dob;
+    private String aadhaarNo;
     private String panNo;
     private String houseNo;
     private String district;
@@ -21,10 +21,10 @@ public class User {
     public User() {
     }
 
-    public User(String id, String DOB, String aadharNo, String panNo, String houseNo, String district, String state, String country, String password, String amount) {
+    public User(String id, String dob, String aadhaarNo, String panNo, String houseNo, String district, String state, String country, String password, String amount) {
         this.id = id;
-        this.DOB = DOB;
-        this.aadharNo = aadharNo;
+        this.dob = dob;
+        this.aadhaarNo = aadhaarNo;
         this.panNo = panNo;
         this.houseNo = houseNo;
         this.district = district;
@@ -43,19 +43,19 @@ public class User {
     }
 
     public String getDOB() {
-        return DOB;
+        return dob;
     }
 
-    public void setDOB(String DOB) {
-        this.DOB = DOB;
+    public void setDOB(String dob) {
+        this.dob = dob;
     }
 
     public String getAadharNo() {
-        return aadharNo;
+        return aadhaarNo;
     }
 
     public void setAadharNo(String aadharNo) {
-        this.aadharNo = aadharNo;
+        this.aadhaarNo = aadharNo;
     }
 
     public String getPanNo() {
@@ -118,8 +118,8 @@ public class User {
     public String toString() {
         return "User{" +
                 "id='" + id + '\'' +
-                ", DOB='" + DOB + '\'' +
-                ", aadharNo='" + aadharNo + '\'' +
+                ", dob='" + dob + '\'' +
+                ", aadhaarNo='" + aadhaarNo + '\'' +
                 ", panNo='" + panNo + '\'' +
                 ", houseNo='" + houseNo + '\'' +
                 ", district='" + district + '\'' +

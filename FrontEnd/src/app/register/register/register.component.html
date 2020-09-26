@@ -15,17 +15,17 @@
 
             <mat-form-field>
                 <!-- <input [formControl]='DOB' required matInput placeholder="Date of Birth (dd/mm/yyyy)"> -->
-                <input matInput [matDatepicker]="picker" [formControl]='DOB' required
+                <input matInput [matDatepicker]="picker" [formControl]='dob' required
                     placeholder="Pick your Date of Birth">
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
-                <mat-error *ngIf="DOB.invalid">{{ getDOBErrorMessage() }}</mat-error>
+                <mat-error *ngIf="dob.invalid">{{ getDobErrorMessage() }}</mat-error>
             </mat-form-field>
             <br>
 
             <mat-form-field>
-                <input [formControl]='aadharNo' required matInput placeholder="Aadhar No.">
-                <mat-error *ngIf="aadharNo.invalid">{{ getAadharNoErrorMessage() }}</mat-error>
+                <input [formControl]='aadhaarNo' required matInput placeholder="Aadhaar No.">
+                <mat-error *ngIf="aadhaarNo.invalid">{{ getAadhaarNoErrorMessage() }}</mat-error>
             </mat-form-field>
             <br>
 
