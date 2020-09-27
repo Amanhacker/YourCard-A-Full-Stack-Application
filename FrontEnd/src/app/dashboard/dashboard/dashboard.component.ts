@@ -92,7 +92,7 @@ export class DashboardComponent implements OnInit {
           labels: {
             // This more specific font property overrides the global property
             fontColor: "black",
-            fontSize: 16,
+            fontSize: 15,
           },
         },
         scales: {
@@ -123,7 +123,7 @@ export class DashboardComponent implements OnInit {
         datasets: [
           {
             label:
-              "Amount(₹) in thousands spent on different category over a year",
+              "Amount(₹) in thousands spent on different category.",
             //data: [13, 5, 10, 17, 9], // function that calculates and return list by category
             data: this.categoryStatistic(),
             backgroundColor: [
@@ -151,7 +151,7 @@ export class DashboardComponent implements OnInit {
           labels: {
             // This more specific font property overrides the global property
             fontColor: "black",
-            fontSize: 16,
+            fontSize: 15,
           },
         },
         scales: {

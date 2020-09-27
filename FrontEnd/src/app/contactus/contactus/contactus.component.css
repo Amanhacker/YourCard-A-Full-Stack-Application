@@ -6,7 +6,7 @@
 .main {
   padding: 0%;
   margin: 0%;
-  padding-left: 6em;
+  padding-left: 1.2em;
 }
 
 /* Style inputs */
@@ -67,8 +67,27 @@ input[type=submit]:hover {
 
 /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
+  
   .column, input[type=submit] {
     width: 100%;
     margin-top: 0;
   }
+
+  .main {
+    padding: 0%;
+  }
+
+  .title {
+    margin-top: 1em;
+  }
+
+  .container p {
+    margin-bottom: 0.5em;
+  }
+
+  #image {
+    margin-top: 0.8em;
+  }
+
+
 }

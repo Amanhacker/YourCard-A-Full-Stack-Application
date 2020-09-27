@@ -53,3 +53,28 @@
 #signout{
   margin-left: 2em;
 }
+
+
+
+/* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
+@media screen and (max-width: 600px) {
+  
+  .span {
+    padding-left: 2vw;
+  } 
+
+  .register-btn{
+    margin-left: 1.9em;
+    font-size: medium;
+  }
+
+  .login-btn {
+    margin-left: 1em;
+    font-size: medium;
+  }
+
+  #signout {
+    margin-left: 1em;
+  }
+
+}

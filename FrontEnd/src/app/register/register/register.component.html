@@ -72,7 +72,7 @@
             <br>
 
             <mat-form-field>
-                <input [formControl]='amount' required matInput placeholder=" Card Amount">
+                <input [formControl]='amount' required matInput placeholder=" Amount in thousands (₹)">
                 <mat-error *ngIf="amount.invalid">{{ getAmountErrorMessage() }}</mat-error>
             </mat-form-field>
             <br>

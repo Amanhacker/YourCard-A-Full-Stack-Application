@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterService } from "src/app/services/router.service";
 
 @Component({
   selector: 'app-submitted',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SubmittedComponent implements OnInit {
 
-  constructor() { }
+  constructor(private routerService: RouterService) {}
 
   ngOnInit() {
+  }
+
+  takeMeHome() {
+    this.routerService.routeToHome();
   }
 
 }

@@ -4,6 +4,11 @@ import { RegisterService } from 'src/app/services/register.service';
 import { RouterService } from 'src/app/services/router.service';
 import { User } from './user';
 
+
+// // import custom validator to validate that password and confirm password fields match
+// import { MustMatch } from './_helpers/must-match.validator';
+
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -45,6 +50,9 @@ export class RegisterComponent implements OnInit {
       password: this.password.value,
       amount: this.amount.value
     };
+    // {
+    //   validator: MustMatch('password', 'confirmPassword')
+    // };
     this.registerService.registerUser(this.user).subscribe(
       data => {
         console.log(data);

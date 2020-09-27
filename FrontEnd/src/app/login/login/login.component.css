@@ -22,3 +22,11 @@
   margin-bottom: 66vh;
 }
 
+
+/* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
+@media screen and (max-width: 600px) {
+   
+  .login-container {
+      width: 260px;
+   }
+}

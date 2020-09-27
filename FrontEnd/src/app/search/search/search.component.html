@@ -24,13 +24,13 @@
   <!--This section will display the search result based on the search keyword given by the user-->
   <section class="d-flex flex-wrap">
     <div *ngFor="let payment of paymentList" class="card">
-      <p>Month: {{payment.month}}</p>
-      <p>Year: {{payment.year}}</p>
-      <p>City: {{payment.city}}</p>
-      <p>Country: {{payment.country}}</p>
-      <p>Category: {{payment.category}}</p>
-      <p>Outlet: {{payment.outlet}}</p>
-      <p>Amount: {{payment.amount}}</p>
+      <p class="first-att">Month : {{payment.month}}</p>
+      <p>Year : {{payment.year}}</p>
+      <p>City : {{payment.city}}</p>
+      <p>Country : {{payment.country}}</p>
+      <p>Category : {{payment.category}}</p>
+      <p>Outlet : {{payment.outlet}}</p>
+      <p>Amount : {{payment.amount}}</p>
     </div>
   </section>
 </div>

@@ -13,10 +13,9 @@ export class ContactusComponent implements OnInit {
 
   ngOnInit() {}
 
-  // submit() {
-  //   this.routerService.routeToSubmitted();
-  //   this.router.navigate(['/submitted']);
-  // }
+  submit() {
+     this.routerService.routeToSubmitted();
+  }
 
   submitContactUsForm(contactUsForm) {
     console.log(contactUsForm);

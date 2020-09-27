@@ -23,3 +23,13 @@
 .register {
   margin-left: auto;
 }
+
+
+
+/* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
+@media screen and (max-width: 600px) {
+   
+  .add-register-panel {
+      width: 280px;
+   }
+}
