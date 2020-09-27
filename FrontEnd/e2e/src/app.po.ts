@@ -1,11 +1,32 @@
-import { browser, by, element } from 'protractor';
+import { browser, by, element, ElementFinder, $ } from 'protractor';
 
 export class AppPage {
-  navigateTo() {
-    return browser.get(browser.baseUrl) as Promise<any>;
-  }
+  public navigateToHome() {
+    browser.get('/');
+}
 
-  getTitleText() {
-    return element(by.css('app-root .content span')).getText() as Promise<string>;
-  }
+public getToolbarTitle(): ElementFinder {
+    return element(by.css('mat-toolbar span'));
+}
+
+public getPageTitle() {
+    return browser.getTitle();
+}
+
+public getPageCurrentUrl() {
+    return browser.getCurrentUrl();
+}
+
+// public getUsernameInput() {
+//     return element(by.name('username'));
+
+// }
+
+// public getPasswordInput() {
+//     return element(by.name('password'));
+// }
+
+// public getLoginButton() {
+//     return $('.button');
+// }
 }
