@@ -1,18 +1,21 @@
-
-body { 
-    background-image: rgb(252, 244, 244);
+body {
+  background-image: rgb(252, 244, 244);
 }
 
 .error-template {
-    padding: 40px 15px;
-    text-align: center;
+  padding: 40px 15px;
+  text-align: center;
+}
+
+.container {
+  margin-bottom: 10em;
 }
 
 .error-actions {
-    margin-top:15px;
-    margin-bottom:15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
-.error-actions .btn { 
-    margin-right:10px; 
+.error-actions .btn {
+  margin-right: 10px;
 }

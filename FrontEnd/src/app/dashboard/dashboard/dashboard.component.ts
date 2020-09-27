@@ -52,7 +52,7 @@ export class DashboardComponent implements OnInit {
         ],
         datasets: [
           {
-            label: "Amount($) in thousands spent in different months",
+            label: "Amount(₹) in thousands spent in different months",
             //data: [12, 19, 3, 5, 2, 3, 1, 3, 5, 10, 17, 20], // function that calculates and return list
             data: this.monthlyStatistic(),
             backgroundColor: [
@@ -90,10 +90,10 @@ export class DashboardComponent implements OnInit {
       options: {
         legend: {
           labels: {
-              // This more specific font property overrides the global property
-              fontColor: 'black',
-              fontSize: 16
-          }
+            // This more specific font property overrides the global property
+            fontColor: "black",
+            fontSize: 16,
+          },
         },
         scales: {
           yAxes: [
@@ -117,12 +117,13 @@ export class DashboardComponent implements OnInit {
           "Shopping",
           "Hotel Stay",
           "ATM",
+          "Transport",
           "Others",
         ],
         datasets: [
           {
             label:
-              "Amount($) in thousands spent on different category over a year",
+              "Amount(₹) in thousands spent on different category over a year",
             //data: [13, 5, 10, 17, 9], // function that calculates and return list by category
             data: this.categoryStatistic(),
             backgroundColor: [
@@ -148,10 +149,10 @@ export class DashboardComponent implements OnInit {
       options: {
         legend: {
           labels: {
-              // This more specific font property overrides the global property
-              fontColor: 'black',
-              fontSize: 16
-          }
+            // This more specific font property overrides the global property
+            fontColor: "black",
+            fontSize: 16,
+          },
         },
         scales: {
           yAxes: [
@@ -170,18 +171,26 @@ export class DashboardComponent implements OnInit {
       type: "pie",
 
       data: {
-        labels: ["Food", "Entertainment", "Shopping", "Hotel Stay", "Others"],
+        // labels: ["Food", "Entertainment", "Shopping", "Hotel Stay", "Others"],
+        labels: this.getUniqueCities(),
         datasets: [
           {
-            label: "Amount($) in thousands spent categorywise",
+            label: "Amount(₹) in thousands spent categorywise",
             //data: [13, 5, 10, 17, 9],
-            data: this.categoryStatistic(),
+            data: this.cityWiseStatistic(),
             backgroundColor: [
               "rgba(255, 99, 132, 0.2)",
               "rgba(54, 162, 235, 0.2)",
               "rgba(255, 206, 86, 0.2)",
               "rgba(75, 192, 192, 0.2)",
               "rgba(153, 102, 255, 0.2)",
+              "rgba(255, 159, 64, 0.2)",
+              "rgba(255, 99, 132, 0.2)",
+              "rgba(54, 162, 235, 0.2)",
+              "rgba(255, 206, 86, 0.2)",
+              "rgba(75, 192, 192, 0.2)",
+              "rgba(153, 102, 255, 0.2)",
+              "rgba(255, 159, 64, 0.2)",
             ],
             borderColor: [
               "rgba(255, 99, 132, 1)",
@@ -189,6 +198,13 @@ export class DashboardComponent implements OnInit {
               "rgba(255, 206, 86, 1)",
               "rgba(75, 192, 192, 1)",
               "rgba(153, 102, 255, 1)",
+              "rgba(255, 159, 64, 1)",
+              "rgba(255, 99, 132, 1)",
+              "rgba(54, 162, 235, 1)",
+              "rgba(255, 206, 86, 1)",
+              "rgba(75, 192, 192, 1)",
+              "rgba(153, 102, 255, 1)",
+              "rgba(255, 159, 64, 1)",
             ],
             borderWidth: 1,
           },
@@ -197,12 +213,12 @@ export class DashboardComponent implements OnInit {
       options: {
         legend: {
           labels: {
-              // This more specific font property overrides the global property
-              fontColor: 'black',
-              fontSize: 16
-          }
-        }
-      }
+            // This more specific font property overrides the global property
+            fontColor: "black",
+            fontSize: 16,
+          },
+        },
+      },
     });
   }
 
@@ -261,13 +277,15 @@ export class DashboardComponent implements OnInit {
           temp[3]++;
         } else if (payment["category"].toLowerCase() === "atm") {
           temp[4]++;
-        } else if (payment["category"].toLowerCase() === "others") {
+        } else if (payment["category"].toLowerCase() === "transport") {
           temp[5]++;
+        } else if (payment["category"].toLowerCase() === "others") {
+          temp[6]++;
         }
 
         return temp;
       },
-      [0, 0, 0, 0, 0, 0]
+      [0, 0, 0, 0, 0, 0, 0]
     );
 
     console.log("Categorically User Data : ", result);
@@ -275,8 +293,38 @@ export class DashboardComponent implements OnInit {
     return result;
   }
 
-}
+  getUniqueCities(): string[] {
+    let result: string[];
 
+    result = this.paymentList.reduce((temp, payment) => {
+      temp.push(payment["city"]);
+
+      return temp;
+    }, []);
+
+    let unique = [...new Set(result)];
+
+    console.log("Unique Cities", unique);
+
+    return unique;
+  }
+
+  cityWiseStatistic(): number[] {
+    let result: number[];
+
+    let cities = this.getUniqueCities();
+
+    result = this.paymentList.reduce((temp, payment) => {
+      temp[cities.indexOf(payment["city"])]++;
+
+      return temp;
+    }, new Array(cities.length).fill(0));
+
+    console.log("Count Cities", result);
+
+    return result;
+  }
+}
 
 //Please don't delete the below code
 //Below code is for my reference for making the changes in dashboard css and for making it responsive.
@@ -337,7 +385,6 @@ export class DashboardComponent implements OnInit {
 //         }
 //     }
 // });
-
 
 // // For Graph2
 // var myChart2 = new Chart("myChart2", {
