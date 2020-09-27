@@ -6,11 +6,11 @@
 }
 
 .card {
-  width: 400px;
+  width: 370px;
   height: 370px;
   align-items: center;
   border: 1px solid black;
-  background-color:rgb(50, 38, 155);
+  background-color: lightblue;
   margin: 6vh 8vw;
   border-radius: 10px;
   margin-left: 62vh;
