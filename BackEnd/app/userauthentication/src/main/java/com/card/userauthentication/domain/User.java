@@ -17,11 +17,13 @@ public class User {
     private String country;
     private String password;
     private String amount;
+    private String customerId;
+    private String cardNo;
 
     public User() {
     }
 
-    public User(String id, String dob, String aadhaarNo, String panNo, String houseNo, String district, String state, String country, String password, String amount) {
+    public User(String id, String dob, String aadhaarNo, String panNo, String houseNo, String district, String state, String country, String password, String amount, String customerId, String cardNo) {
         this.id = id;
         this.dob = dob;
         this.aadhaarNo = aadhaarNo;
@@ -32,6 +34,8 @@ public class User {
         this.country = country;
         this.password = password;
         this.amount = amount;
+        this.customerId = customerId;
+        this.cardNo = cardNo;
     }
 
     public String getId() {
@@ -42,20 +46,20 @@ public class User {
         this.id = id;
     }
 
-    public String getDOB() {
+    public String getDob() {
         return dob;
     }
 
-    public void setDOB(String dob) {
+    public void setDob(String dob) {
         this.dob = dob;
     }
 
-    public String getAadharNo() {
+    public String getAadhaarNo() {
         return aadhaarNo;
     }
 
-    public void setAadharNo(String aadharNo) {
-        this.aadhaarNo = aadharNo;
+    public void setAadhaarNo(String aadhaarNo) {
+        this.aadhaarNo = aadhaarNo;
     }
 
     public String getPanNo() {
@@ -114,6 +118,22 @@ public class User {
         this.amount = amount;
     }
 
+    public String getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
+    }
+
+    public String getCardNo() {
+        return cardNo;
+    }
+
+    public void setCardNo(String cardNo) {
+        this.cardNo = cardNo;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -127,6 +147,8 @@ public class User {
                 ", country='" + country + '\'' +
                 ", password='" + password + '\'' +
                 ", amount='" + amount + '\'' +
+                ", customerId='" + customerId + '\'' +
+                ", cardNo='" + cardNo + '\'' +
                 '}';
     }
 }

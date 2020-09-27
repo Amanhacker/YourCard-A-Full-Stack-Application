@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { RouterService } from "src/app/services/router.service";
-import { AuthenticationService } from "src/app/services/authentication.service";
-import { Router } from "@angular/router";
+import { FormControl } from '@angular/forms';
+import { ContactusService } from 'src/app/services/contactus.service';
 
 @Component({
   selector: "app-contactus",
@@ -9,15 +9,34 @@ import { Router } from "@angular/router";
   styleUrls: ["./contactus.component.css"],
 })
 export class ContactusComponent implements OnInit {
-  constructor(private router: Router, private routerService: RouterService) {}
 
-  ngOnInit() {}
+  public query;
+  public queryMessage;
+  name = new FormControl();
+  email = new FormControl();
+  country = new FormControl();
+  subject = new FormControl();
+  constructor(private routerService: RouterService, private contactusService: ContactusService) { }
 
-  submit() {
-     this.routerService.routeToSubmitted();
+  ngOnInit() {
+
   }
 
-  submitContactUsForm(contactUsForm) {
-    console.log(contactUsForm);
+  submitContactUsForm() {
+    this.query = {
+      name: this.name.value,
+      email: this.email.value,
+      country: this.country.value,
+      subject: this.subject.value
+    };
+    this.contactusService.postQuery(this.query).subscribe(
+      data => {
+        this.queryMessage = data;
+        this.routerService.routeToSubmitted();
+      }
+    );
+    console.log(this.query);
   }
 }
+
+

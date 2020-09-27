@@ -11,13 +11,17 @@ import { Chart } from "node_modules/chart.js";
 export class DashboardComponent implements OnInit {
   paymentList;
   errMessage: string;
+  username: string;
 
   constructor(
     private paymentService: PaymentService,
     private authService: AuthenticationService
-  ) {}
+  ) { }
 
   ngOnInit() {
+
+    this.username = this.authService.getUserId();
+
     this.paymentService.getAllPayments(this.authService.getUserId()).subscribe(
       (data) => {
         this.paymentList = data;
@@ -32,7 +36,6 @@ export class DashboardComponent implements OnInit {
   }
 
   createCharts() {
-    //Added by Aman
     var myChart1 = new Chart("myChart1", {
       type: "bar",
       data: {

@@ -30,6 +30,8 @@ export class RegisterComponent implements OnInit {
   password = new FormControl('', Validators.compose([Validators.required, Validators.minLength(5)]));
   conpassword = new FormControl('', Validators.compose([Validators.required, Validators.minLength(5)]));
   amount = new FormControl('', Validators.compose([Validators.required, Validators.pattern('^[0-9]+$')]));
+  customerId = new FormControl();
+  cardNo = new FormControl();
 
   constructor(private registerService: RegisterService, private routerService: RouterService) {
   }
@@ -48,7 +50,9 @@ export class RegisterComponent implements OnInit {
       state: this.state.value,
       country: this.country.value,
       password: this.password.value,
-      amount: this.amount.value
+      amount: this.amount.value,
+      customerId: Math.floor(10000000 + Math.random() * 90000000),
+      cardNo: Math.floor(100000000000 + Math.random() * 900000000000)
     };
     // {
     //   validator: MustMatch('password', 'confirmPassword')
