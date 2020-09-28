@@ -3,6 +3,7 @@ import { AuthenticationService } from "src/app/services/authentication.service";
 import { PaymentService } from "src/app/services/payment.service";
 import { Chart } from "node_modules/chart.js";
 import { RegisterService } from "src/app/services/register.service";
+import { UserdetailsService } from 'src/app/services/userdetails.service';
 
 @Component({
   selector: "app-dashboard",
@@ -13,18 +14,44 @@ export class DashboardComponent implements OnInit {
   paymentList;
   errMessage: string;
   username: string;
-
+  currentBalance: string;
+  customerId: string;
+  cardNo: string;
   symbol: string;
 
   constructor(
     private paymentService: PaymentService,
     private authService: AuthenticationService,
-    private registerService: RegisterService
-  ) {}
+    private registerService: RegisterService,
+    private userDetailsService: UserdetailsService
+  ) { }
 
   ngOnInit() {
     this.username = this.authService.getUserId();
-
+    this.userDetailsService.getCurrentBalance(this.authService.getUserId()).subscribe(
+      data => {
+        this.currentBalance = data['balance'];
+      },
+      err => {
+        this.errMessage = err.message;
+      }
+    );
+    this.userDetailsService.getCustomerId(this.authService.getUserId()).subscribe(
+      data => {
+        this.customerId = data['customerId'];
+      },
+      err => {
+        this.errMessage = err.message;
+      }
+    );
+    this.userDetailsService.getCardNo(this.authService.getUserId()).subscribe(
+      data => {
+        this.cardNo = data['cardNo'];
+      },
+      err => {
+        this.errMessage = err.message;
+      }
+    );
     this.registerService.getUserBaseCurrency(this.username).subscribe(
       (data) => {
         this.symbol = data["baseCurrency"] === "INR" ? "₹" : "$";
@@ -183,9 +210,7 @@ export class DashboardComponent implements OnInit {
     //For Graph3
     var myChart3 = new Chart("myChart3", {
       type: "pie",
-
       data: {
-        // labels: ["Food", "Entertainment", "Shopping", "Hotel Stay", "Others"],
         labels: this.getUniqueCities(),
         datasets: [
           {

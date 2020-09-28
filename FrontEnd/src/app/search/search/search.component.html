@@ -1,6 +1,6 @@
 <div class='search-section'>
   <div class="head-content">
-    <h2>Search for Payment</h2>
+    <h2>{{username}}, looking for any particular payment?</h2><br>
     <!--Getting input from the user-->
     <input type="text" [(ngModel)]="keyword" placeholder="Search by Outlet/Category/City/Country/Year/Month"
       class="form-control" />
@@ -24,7 +24,8 @@
   <!--This section will display the search result based on the search keyword given by the user-->
   <section class="d-flex flex-wrap">
     <div *ngFor="let payment of paymentList" class="card">
-      <p class="first-att">Month : {{payment.month}}</p>
+      <img class="first-att" src="assets/images/logo.png" alt="logo">
+      <p>Month : {{payment.month}}</p>
       <p>Year : {{payment.year}}</p>
       <p>City : {{payment.city}}</p>
       <p>Country : {{payment.country}}</p>

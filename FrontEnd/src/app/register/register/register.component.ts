@@ -80,9 +80,9 @@ export class RegisterComponent implements OnInit {
   constructor(
     private registerService: RegisterService,
     private routerService: RouterService
-  ) {}
+  ) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   register() {
     this.user = {
@@ -90,12 +90,13 @@ export class RegisterComponent implements OnInit {
       dob: this.dob.value,
       aadhaarNo: this.aadhaarNo.value,
       panNo: this.panNo.value,
-      houseNo: this.houseNo.value,
-      district: this.district.value,
-      state: this.state.value,
+      address: {
+        houseNo: this.houseNo.value,
+        district: this.district.value,
+        state: this.state.value,
+      },
       country: this.country.value,
       password: this.password.value,
-      // amount: this.amount.value,
       customerId: Math.floor(10000000 + Math.random() * 90000000),
       cardNo: Math.floor(100000000000 + Math.random() * 900000000000),
     };
@@ -201,12 +202,5 @@ export class RegisterComponent implements OnInit {
       return "Minimum length of confirm password should be 5";
     }
   }
-
-  // getAmountErrorMessage() {
-  //   if (this.amount.touched && this.amount.hasError("required")) {
-  //     return "Amount is required";
-  //   } else if (this.amount.touched && this.amount.hasError("pattern")) {
-  //     return "Amount can only contain numeric characters";
-  //   }
-  // }
+  
 }

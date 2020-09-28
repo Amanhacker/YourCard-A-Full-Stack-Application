@@ -1,29 +1,27 @@
 .search-section {
   text-align: center;
   align-items: center;
-  margin-top: 25vh;
-  margin-bottom: 48vh;
+  margin-top: 8vh;
 }
 
 .card {
-  width: 370px;
-  height: 370px;
+  width: 300px;
+  height: 380px;
   align-items: center;
   border: 1px solid black;
   background-color: lightblue;
-  margin: 6vh 8vw;
+  margin: 50px 50px;
   border-radius: 10px;
-  margin-left: 62vh;
 }
 
 .first-att {
-  margin-top: 2em;
+  margin: 1em auto;
+  height: 8vh;
+  width: 4.5vw;
 }
 
 .card p {
-  font-size: 20px;
-  
-  font-weight: bold;
+  font-size: 18px;
 }
 
 .head-content {
@@ -57,9 +55,10 @@ p {
 }
 
 h2 {
-  font-size: 2em;
+  font-size: 1.5em;
   font-weight: bold;
-  margin-bottom: 30px;
+  font-style: italic;
+  margin-bottom: 10px;
   color: #00b4cc;
 }
 
@@ -69,12 +68,7 @@ h2 {
 }
 
 @media only screen and (max-width: 600px) {
-  .card {
-    width: 300px;
-    height: 500px;
-    margin: 2em;
-  }
-
+ 
   p {
     font-size: 1em;
   }
@@ -85,13 +79,11 @@ h2 {
 
   .card {
     width: 300px;
-    height: 370px;
-    align-items: center;
-    border: 1px solid black;
-    background-color:rgb(50, 38, 155);
-    margin: 6vh 8vw;
-    border-radius: 10px;
-    margin-left: 8vh;
+    height: 390px;
   }
 
+  .first-att {
+    height: 8vh;
+    width: 13vw;
+  } 
 }

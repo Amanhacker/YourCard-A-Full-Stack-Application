@@ -11,7 +11,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.ws.rs.PUT;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -139,6 +138,42 @@ public class UserAuthenticationController {
             User user = authService.getUserById(userId);
 
             return new ResponseEntity<>(user, HttpStatus.OK);
+        } catch (UserNotFoundException e) {
+
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+        } catch (Exception e) {
+
+            return new ResponseEntity<>("Internal Server Error", HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @GetMapping("/getCustomerId/{userId}")
+    public ResponseEntity<?> getCustomerId(@PathVariable String userId) {
+
+        try {
+
+            String customerId = authService.getCustomerId(userId);
+            HashMap<String, String> map = new HashMap<>();
+            map.put("customerId", customerId);
+            return new ResponseEntity<>(map, HttpStatus.OK);
+
+        } catch (UserNotFoundException e) {
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+        } catch (Exception e) {
+            return new ResponseEntity<>("Internal Server Error", HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @GetMapping("/getCardNo/{userId}")
+    public ResponseEntity<?> getCardNo(@PathVariable String userId) {
+
+        try {
+
+            String cardNo = authService.getCardNo(userId);
+            HashMap<String, String> map = new HashMap<>();
+            map.put("cardNo", cardNo);
+            return new ResponseEntity<>(map, HttpStatus.OK);
+
         } catch (UserNotFoundException e) {
 
             return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);

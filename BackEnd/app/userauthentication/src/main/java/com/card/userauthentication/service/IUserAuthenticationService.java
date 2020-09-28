@@ -17,4 +17,8 @@ public interface IUserAuthenticationService {
     public User updateBalance(User user) throws UserNotFoundException;
 
     public User getUserById(String userId) throws UserNotFoundException;
+
+    public String getCustomerId(String userId) throws UserNotFoundException;
+
+    public String getCardNo(String userId) throws UserNotFoundException;
 }

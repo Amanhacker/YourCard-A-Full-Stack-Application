@@ -62,9 +62,7 @@ public class UserAuthenticationServiceImpl implements IUserAuthenticationService
         if (!optionalUser.isPresent()) {
             throw new UserNotFoundException("User not found");
         }
-
         User foundUser = optionalUser.get();
-
         return foundUser.getAmount();
     }
 
@@ -90,5 +88,25 @@ public class UserAuthenticationServiceImpl implements IUserAuthenticationService
         }
 
         return optionalUser.get();
+    }
+
+    @Override
+    public String getCustomerId(String userId) throws UserNotFoundException {
+        Optional<User> optionalUser = userAutheticationRepository.findById(userId);
+        if (!optionalUser.isPresent()) {
+            throw new UserNotFoundException("User not found");
+        }
+        User foundUser = optionalUser.get();
+        return foundUser.getCustomerId();
+    }
+
+    @Override
+    public String getCardNo(String userId) throws UserNotFoundException {
+        Optional<User> optionalUser = userAutheticationRepository.findById(userId);
+        if (!optionalUser.isPresent()) {
+            throw new UserNotFoundException("User not found");
+        }
+        User foundUser = optionalUser.get();
+        return foundUser.getCardNo();
     }
 }

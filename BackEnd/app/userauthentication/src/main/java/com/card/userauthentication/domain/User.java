@@ -11,9 +11,7 @@ public class User {
     private String dob;
     private String aadhaarNo;
     private String panNo;
-    private String houseNo;
-    private String district;
-    private String state;
+    private Address address;
     private String country;
     private String password;
     private String amount;
@@ -24,14 +22,12 @@ public class User {
     public User() {
     }
 
-    public User(String id, String dob, String aadhaarNo, String panNo, String houseNo, String district, String state, String country, String password, String amount, String customerId, String cardNo, String baseCurrency) {
+    public User(String id, String dob, String aadhaarNo, String panNo, Address address, String country, String password, String amount, String customerId, String cardNo, String baseCurrency) {
         this.id = id;
         this.dob = dob;
         this.aadhaarNo = aadhaarNo;
         this.panNo = panNo;
-        this.houseNo = houseNo;
-        this.district = district;
-        this.state = state;
+        this.address = address;
         this.country = country;
         this.password = password;
         this.amount = amount;
@@ -72,28 +68,12 @@ public class User {
         this.panNo = panNo;
     }
 
-    public String getHouseNo() {
-        return houseNo;
+    public Address getAddress() {
+        return address;
     }
 
-    public void setHouseNo(String houseNo) {
-        this.houseNo = houseNo;
-    }
-
-    public String getDistrict() {
-        return district;
-    }
-
-    public void setDistrict(String district) {
-        this.district = district;
-    }
-
-    public String getState() {
-        return state;
-    }
-
-    public void setState(String state) {
-        this.state = state;
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
     public String getCountry() {
@@ -151,9 +131,7 @@ public class User {
                 ", dob='" + dob + '\'' +
                 ", aadhaarNo='" + aadhaarNo + '\'' +
                 ", panNo='" + panNo + '\'' +
-                ", houseNo='" + houseNo + '\'' +
-                ", district='" + district + '\'' +
-                ", state='" + state + '\'' +
+                ", address=" + address +
                 ", country='" + country + '\'' +
                 ", password='" + password + '\'' +
                 ", amount='" + amount + '\'' +

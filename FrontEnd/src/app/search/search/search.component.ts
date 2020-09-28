@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Payment } from 'src/app/payment/payment';
 import { AuthenticationService } from 'src/app/services/authentication.service';
+import { PaymentService } from 'src/app/services/payment.service';
 import { SearchService } from 'src/app/services/search.service';
 
 @Component({
@@ -13,14 +14,24 @@ export class SearchComponent implements OnInit {
 
   paymentList;
   errorMessage: string;
+  username: string;
   searchparam = new FormControl();
 
-  constructor(private searchService: SearchService, private authService: AuthenticationService) { 
+  constructor(private searchService: SearchService, private authService: AuthenticationService, private paymentService: PaymentService) { 
     this.errorMessage='';
     this.paymentList=null;
   }
 
   ngOnInit() {
+    this.username = this.authService.getUserId();
+    this.paymentService.getAllPayments(this.authService.getUserId()).subscribe(
+      (data) => {
+        this.paymentList = data;
+      },
+      (error) => {
+        this.errorMessage = error;
+      }
+    );
   }
 
   getPaymentDetails(keyword) {

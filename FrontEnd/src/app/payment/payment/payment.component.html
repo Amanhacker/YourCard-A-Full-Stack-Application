@@ -39,7 +39,10 @@
         <br>
 
         <mat-form-field>
-            <input [formControl]='country' matInput placeholder="Country">
+            <mat-select [formControl]='country' placeholder="Country">
+                <mat-option value="India">India</mat-option>
+                <mat-option value="US">US</mat-option>
+            </mat-select>
             <mat-error *ngIf="country.invalid">{{ getCountryErrorMessage() }}</mat-error>
         </mat-form-field>
         <br>
