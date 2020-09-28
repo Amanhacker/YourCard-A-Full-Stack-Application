@@ -2,6 +2,7 @@
   text-align: center;
   align-items: center;
   margin-top: 8vh;
+  margin-bottom: 65vh;
 }
 
 .card {
@@ -12,6 +13,10 @@
   background-color: lightblue;
   margin: 50px 50px;
   border-radius: 10px;
+}
+
+#card-sect {
+  margin-left: 4em;
 }
 
 .first-att {
@@ -26,6 +31,12 @@
 
 .head-content {
   text-align: center;
+}
+
+.head-content h2 {
+  font-style: normal;
+  color: black;
+  font-weight: 400;
 }
 
 select {
@@ -69,6 +80,10 @@ h2 {
 
 @media only screen and (max-width: 600px) {
  
+  #card-sect {
+    margin-left: 0%;
+  }
+
   p {
     font-size: 1em;
   }

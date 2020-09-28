@@ -42,6 +42,18 @@
   padding-left: 15vh;
 }
 
+#span-title {
+  font-size: 1.3em;
+}
+
+#span-theme{
+  padding-left: 1vh;
+  font-size: 0.7em;
+  margin-top: 1.5em;
+  color: whitesmoke;
+  font-weight: 400;
+}
+
 .toolbar {
   height: 20vh;
 }
@@ -64,7 +76,7 @@
   } 
 
   .register-btn{
-    margin-left: 1.9em;
+    margin-left: -8.9em;
     font-size: medium;
   }
 
@@ -76,5 +88,15 @@
   #signout {
     margin-left: 1em;
   }
+
+  
+#span-title {
+  font-size: 1em;
+  margin-left: 0.1em;
+}
+
+#span-theme{
+  opacity: 0;
+}
 
 }

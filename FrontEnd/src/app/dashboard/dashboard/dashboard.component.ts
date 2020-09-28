@@ -162,7 +162,7 @@ export class DashboardComponent implements OnInit {
         ],
         datasets: [
           {
-            label: `Amount(${this.symbol}) spent on different category.`,
+            label: `No of transactions done over different category.`,
             //data: [13, 5, 10, 17, 9], // function that calculates and return list by category
             data: this.categoryStatistic(),
             backgroundColor: [

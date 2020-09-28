@@ -11,20 +11,20 @@
         <mat-card-title>{{ username }}</mat-card-title>
         <mat-card-subtitle>International Travel Card</mat-card-subtitle>
       </mat-card-header>
-      <img
+      <img class="image-credit"
         mat-card-image
         src="../../../assets/images/dashboard-card.jpg"
-        alt="Photo of a Shiba Inu"
+        alt=""
       />
       <mat-card-content>
         <p class="card-info1">
-          Account Current Balance: {{currentBalance}} <br />
+          <!-- Account Current Balance: {{currentBalance}} <br /> -->
           Card Limit per day: 10 lakhs <br />
         </p>
       </mat-card-content>
-      <mat-card-actions>
-        <button mat-button>Know more</button>
-      </mat-card-actions>
+      <!-- <mat-card-actions>
+        <button mat-button class="know-more">Know more</button>
+      </mat-card-actions> -->
     </mat-card>
 
     <mat-card class="example-card" id="card2">
@@ -42,7 +42,7 @@
           <br />
           Account Current Balance: {{currentBalance}} <br />
           <br />
-          Card Limit per day: 10 lakhs <br />
+          <!-- Card Limit per day: 10 lakhs <br /> -->
           <br />
         </p>
       </mat-card-content>
@@ -57,6 +57,7 @@
     <div id="divChart">
       <canvas id="myChart1" class="chart"></canvas>
       <canvas id="myChart2" class="chart"></canvas>
+      <h1 class="pie-head">No. of transactions done City-wise</h1>
       <canvas id="myChart3"></canvas>
     </div>
   </div>
