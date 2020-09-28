@@ -3,7 +3,6 @@ import { AuthenticationService } from "src/app/services/authentication.service";
 import { PaymentService } from "src/app/services/payment.service";
 import { Chart } from "node_modules/chart.js";
 import { RegisterService } from "src/app/services/register.service";
-import { UserdetailsService } from "src/app/services/userdetails.service";
 
 @Component({
   selector: "app-dashboard",
@@ -22,33 +21,28 @@ export class DashboardComponent implements OnInit {
   constructor(
     private paymentService: PaymentService,
     private authService: AuthenticationService,
-    private registerService: RegisterService,
-    private userDetailsService: UserdetailsService
+    private registerService: RegisterService
   ) {}
 
   ngOnInit() {
     this.username = this.authService.getUserId();
-    this.userDetailsService
-      .getCurrentBalance(this.authService.getUserId())
-      .subscribe(
-        (data) => {
-          this.currentBalance = data["balance"];
-        },
-        (err) => {
-          this.errMessage = err.message;
-        }
-      );
-    this.userDetailsService
-      .getCustomerId(this.authService.getUserId())
-      .subscribe(
-        (data) => {
-          this.customerId = data["customerId"];
-        },
-        (err) => {
-          this.errMessage = err.message;
-        }
-      );
-    this.userDetailsService.getCardNo(this.authService.getUserId()).subscribe(
+    this.registerService.getUserBalance(this.authService.getUserId()).subscribe(
+      (data) => {
+        this.currentBalance = data["balance"];
+      },
+      (err) => {
+        this.errMessage = err.message;
+      }
+    );
+    this.registerService.getCustomerId(this.authService.getUserId()).subscribe(
+      (data) => {
+        this.customerId = data["customerId"];
+      },
+      (err) => {
+        this.errMessage = err.message;
+      }
+    );
+    this.registerService.getCardNo(this.authService.getUserId()).subscribe(
       (data) => {
         this.cardNo = data["cardNo"];
       },
@@ -168,7 +162,7 @@ export class DashboardComponent implements OnInit {
         ],
         datasets: [
           {
-            label: `Amount(${this.symbol}) spent on different category.`,
+            label: `No of transactions done over different category.`,
             //data: [13, 5, 10, 17, 9], // function that calculates and return list by category
             data: this.categoryStatistic(),
             backgroundColor: [

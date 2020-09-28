@@ -38,4 +38,12 @@ export class RegisterService {
       "http://localhost:8765/authenticationservice/getUser/" + userId
     );
   }
+
+  getCustomerId(userId) {
+    return this.httpClient.get(`http://localhost:8765/authenticationservice/getCustomerId/${userId}`);
+  }
+
+  getCardNo(userId) {
+    return this.httpClient.get(`http://localhost:8765/authenticationservice/getCardNo/${userId}`);
+  }
 }

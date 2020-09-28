@@ -66,11 +66,12 @@
 }
 
 .card-component {
-  background-image: url('../../../assets/images/sea.jfif');
+  /* background-image: url('../../../assets/images/sea.jfif'); */
   position: absolute;
   height: 100%;
   width: 100%;
   margin-bottom: 0%;
+  background-color: whitesmoke;
 }
 
 .card-info1 {
