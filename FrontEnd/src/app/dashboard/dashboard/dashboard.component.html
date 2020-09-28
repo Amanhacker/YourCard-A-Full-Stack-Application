@@ -1,15 +1,14 @@
 <!-- <app-graph1></app-graph1> -->
 <div class="main">
-
   <div>
-    <h2 class="head-title">Welcome to Natwest Group, {{username}}</h2>   
+    <h2 class="head-title">Welcome to Natwest Group, {{ username }}</h2>
   </div>
 
   <div class="card-flex">
     <mat-card class="example-card">
       <mat-card-header>
         <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>{{username}}</mat-card-title>
+        <mat-card-title>{{ username }}</mat-card-title>
         <mat-card-subtitle>International Travel Card</mat-card-subtitle>
       </mat-card-header>
       <img
@@ -29,9 +28,10 @@
     </mat-card>
 
     <mat-card class="example-card" id="card2">
-      
       <mat-card-header>
-        <mat-card-title class="title" id="title2">Your Account Info <br /></mat-card-title>
+        <mat-card-title class="title" id="title2"
+          >Your Account Info <br
+        /></mat-card-title>
       </mat-card-header>
 
       <mat-card-content>
@@ -51,7 +51,7 @@
   </div>
 
   <div id="explore">
-    <h2 id="head-title2">Explore your customized dashboard, {{username}}</h2>   
+    <h2 id="head-title2">Explore your customized dashboard</h2>
   </div>
 
   <div class="flex-container">
@@ -61,5 +61,4 @@
       <canvas id="myChart3"></canvas>
     </div>
   </div>
-
 </div>

@@ -19,11 +19,12 @@ public class User {
     private String amount;
     private String customerId;
     private String cardNo;
+    private String baseCurrency;
 
     public User() {
     }
 
-    public User(String id, String dob, String aadhaarNo, String panNo, String houseNo, String district, String state, String country, String password, String amount, String customerId, String cardNo) {
+    public User(String id, String dob, String aadhaarNo, String panNo, String houseNo, String district, String state, String country, String password, String amount, String customerId, String cardNo, String baseCurrency) {
         this.id = id;
         this.dob = dob;
         this.aadhaarNo = aadhaarNo;
@@ -36,6 +37,7 @@ public class User {
         this.amount = amount;
         this.customerId = customerId;
         this.cardNo = cardNo;
+        this.baseCurrency = baseCurrency;
     }
 
     public String getId() {
@@ -134,6 +136,14 @@ public class User {
         this.cardNo = cardNo;
     }
 
+    public String getBaseCurrency() {
+        return baseCurrency;
+    }
+
+    public void setBaseCurrency(String baseCurrency) {
+        this.baseCurrency = baseCurrency;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -149,6 +159,7 @@ public class User {
                 ", amount='" + amount + '\'' +
                 ", customerId='" + customerId + '\'' +
                 ", cardNo='" + cardNo + '\'' +
+                ", baseCurrency='" + baseCurrency + '\'' +
                 '}';
     }
 }

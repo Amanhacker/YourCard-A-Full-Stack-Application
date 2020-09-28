@@ -10,11 +10,12 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 @Service
-public class UserAuthenticationServiceImpl implements IUserAuthenticationService{
+public class UserAuthenticationServiceImpl implements IUserAuthenticationService {
 
     private UserAuthenticationRepository userAutheticationRepository;
+
     @Autowired
-    public UserAuthenticationServiceImpl(UserAuthenticationRepository userAutheticationRepository){
+    public UserAuthenticationServiceImpl(UserAuthenticationRepository userAutheticationRepository) {
         this.userAutheticationRepository = userAutheticationRepository;
     }
 
@@ -39,5 +40,55 @@ public class UserAuthenticationServiceImpl implements IUserAuthenticationService
             flag = true;
         }
         return flag;
+    }
+
+    @Override
+    public String getUserBaseCurrency(String userId) throws UserNotFoundException {
+
+        Optional<User> optionalUser = userAutheticationRepository.findById(userId);
+
+        if (!optionalUser.isPresent()) {
+            throw new UserNotFoundException("User not found");
+        }
+
+        User foundUser = optionalUser.get();
+        return foundUser.getBaseCurrency();
+    }
+
+    @Override
+    public String getUserBalance(String userId) throws UserNotFoundException {
+        Optional<User> optionalUser = userAutheticationRepository.findById(userId);
+
+        if (!optionalUser.isPresent()) {
+            throw new UserNotFoundException("User not found");
+        }
+
+        User foundUser = optionalUser.get();
+
+        return foundUser.getAmount();
+    }
+
+    @Override
+    public User updateBalance(User user) throws UserNotFoundException {
+        Optional<User> optionalUser = userAutheticationRepository.findById(user.getId());
+
+        if (!optionalUser.isPresent()) {
+            throw new UserNotFoundException("User not found");
+        }
+
+        User updatedUser = userAutheticationRepository.save(user);
+
+        return updatedUser;
+    }
+
+    @Override
+    public User getUserById(String userId) throws UserNotFoundException {
+        Optional<User> optionalUser = userAutheticationRepository.findById(userId);
+
+        if (!optionalUser.isPresent()) {
+            throw new UserNotFoundException("User not found");
+        }
+
+        return optionalUser.get();
     }
 }

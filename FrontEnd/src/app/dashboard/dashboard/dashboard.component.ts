@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { AuthenticationService } from "src/app/services/authentication.service";
 import { PaymentService } from "src/app/services/payment.service";
 import { Chart } from "node_modules/chart.js";
+import { RegisterService } from "src/app/services/register.service";
 
 @Component({
   selector: "app-dashboard",
@@ -13,14 +14,25 @@ export class DashboardComponent implements OnInit {
   errMessage: string;
   username: string;
 
+  symbol: string;
+
   constructor(
     private paymentService: PaymentService,
-    private authService: AuthenticationService
-  ) { }
+    private authService: AuthenticationService,
+    private registerService: RegisterService
+  ) {}
 
   ngOnInit() {
-
     this.username = this.authService.getUserId();
+
+    this.registerService.getUserBaseCurrency(this.username).subscribe(
+      (data) => {
+        this.symbol = data["baseCurrency"] === "INR" ? "₹" : "$";
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
 
     this.paymentService.getAllPayments(this.authService.getUserId()).subscribe(
       (data) => {
@@ -55,7 +67,7 @@ export class DashboardComponent implements OnInit {
         ],
         datasets: [
           {
-            label: "Amount(₹) in thousands spent in different months",
+            label: `Amount(${this.symbol}) spent in different months`,
             //data: [12, 19, 3, 5, 2, 3, 1, 3, 5, 10, 17, 20], // function that calculates and return list
             data: this.monthlyStatistic(),
             backgroundColor: [
@@ -125,8 +137,7 @@ export class DashboardComponent implements OnInit {
         ],
         datasets: [
           {
-            label:
-              "Amount(₹) in thousands spent on different category.",
+            label: `Amount(${this.symbol}) spent on different category.`,
             //data: [13, 5, 10, 17, 9], // function that calculates and return list by category
             data: this.categoryStatistic(),
             backgroundColor: [
@@ -178,7 +189,7 @@ export class DashboardComponent implements OnInit {
         labels: this.getUniqueCities(),
         datasets: [
           {
-            label: "Amount(₹) in thousands spent categorywise",
+            label: "Transaction in different cities",
             //data: [13, 5, 10, 17, 9],
             data: this.cityWiseStatistic(),
             backgroundColor: [

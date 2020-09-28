@@ -11,11 +11,12 @@ public class Payment {
     private String category;
     private String outlet;
     private String amount;
+    private String transactionCurrency;
 
     public Payment() {
     }
 
-    public Payment(int id, String customer, String month, String year, String city, String country, String category, String outlet, String amount) {
+    public Payment(int id, String customer, String month, String year, String city, String country, String category, String outlet, String amount, String transactionCurrency) {
         this.id = id;
         this.customer = customer;
         this.month = month;
@@ -25,6 +26,7 @@ public class Payment {
         this.category = category;
         this.outlet = outlet;
         this.amount = amount;
+        this.transactionCurrency = transactionCurrency;
     }
 
     public int getId() {
@@ -99,6 +101,14 @@ public class Payment {
         this.city = city;
     }
 
+    public String getTransactionCurrency() {
+        return transactionCurrency;
+    }
+
+    public void setTransactionCurrency(String transactionCurrency) {
+        this.transactionCurrency = transactionCurrency;
+    }
+
     @Override
     public String toString() {
         return "Payment{" +
@@ -111,6 +121,7 @@ public class Payment {
                 ", category='" + category + '\'' +
                 ", outlet='" + outlet + '\'' +
                 ", amount='" + amount + '\'' +
+                ", transactionCurrency='" + transactionCurrency + '\'' +
                 '}';
     }
 }
