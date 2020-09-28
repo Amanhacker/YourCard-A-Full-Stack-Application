@@ -11,15 +11,18 @@
         <mat-card-title>{{ username }}</mat-card-title>
         <mat-card-subtitle>International Travel Card</mat-card-subtitle>
       </mat-card-header>
-      <img class="image-credit"
+      <img
+        class="image-credit"
         mat-card-image
         src="../../../assets/images/dashboard-card.jpg"
         alt=""
       />
       <mat-card-content>
+        <p class="card-info1">Card Type : {{ cardType }} Card</p>
+
         <p class="card-info1">
           <!-- Account Current Balance: {{currentBalance}} <br /> -->
-          Card Limit per day: 10 lakhs <br />
+          Card Limit per day: {{ symbol }} {{ cardLimit }} <br />
         </p>
       </mat-card-content>
       <!-- <mat-card-actions>
@@ -36,11 +39,11 @@
 
       <mat-card-content>
         <p class="card-info2">
-          Your Customer Id : {{customerId}} <br />
+          Your Customer Id : {{ customerId }} <br />
           <br />
-          Card no : {{cardNo}} <br />
+          Card no : {{ cardNo }} <br />
           <br />
-          Account Current Balance: {{currentBalance}} <br />
+          Balance: {{ symbol }} {{ currentBalance }} <br />
           <br />
           <!-- Card Limit per day: 10 lakhs <br /> -->
           <br />
@@ -49,15 +52,21 @@
     </mat-card>
   </div>
 
-  <div id="explore">
+  <div id="explore" *ngIf="paymentList !== undefined">
     <h2 id="head-title2">Explore your customized dashboard</h2>
+  </div>
+
+  <div *ngIf="paymentList === undefined">
+    <h2 id="head-title2">No analysis to display!</h2>
   </div>
 
   <div class="flex-container">
     <div id="divChart">
       <canvas id="myChart1" class="chart"></canvas>
       <canvas id="myChart2" class="chart"></canvas>
-      <h1 class="pie-head">No. of transactions done City-wise</h1>
+      <h1 class="pie-head" *ngIf="paymentList !== undefined">
+        No. of transactions done City-wise
+      </h1>
       <canvas id="myChart3"></canvas>
     </div>
   </div>

@@ -18,11 +18,13 @@ public class User {
     private String customerId;
     private String cardNo;
     private String baseCurrency;
+    private String cardType;
+    private String cardLimit;
 
     public User() {
     }
 
-    public User(String id, String dob, String aadhaarNo, String panNo, Address address, String country, String password, String amount, String customerId, String cardNo, String baseCurrency) {
+    public User(String id, String dob, String aadhaarNo, String panNo, Address address, String country, String password, String amount, String customerId, String cardNo, String baseCurrency, String cardType, String cardLimit) {
         this.id = id;
         this.dob = dob;
         this.aadhaarNo = aadhaarNo;
@@ -34,6 +36,8 @@ public class User {
         this.customerId = customerId;
         this.cardNo = cardNo;
         this.baseCurrency = baseCurrency;
+        this.cardType = cardType;
+        this.cardLimit = cardLimit;
     }
 
     public String getId() {
@@ -124,6 +128,22 @@ public class User {
         this.baseCurrency = baseCurrency;
     }
 
+    public String getCardType() {
+        return cardType;
+    }
+
+    public void setCardType(String cardType) {
+        this.cardType = cardType;
+    }
+
+    public String getCardLimit() {
+        return cardLimit;
+    }
+
+    public void setCardLimit(String cardLimit) {
+        this.cardLimit = cardLimit;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -138,6 +158,8 @@ public class User {
                 ", customerId='" + customerId + '\'' +
                 ", cardNo='" + cardNo + '\'' +
                 ", baseCurrency='" + baseCurrency + '\'' +
+                ", cardType='" + cardType + '\'' +
+                ", cardLimit='" + cardLimit + '\'' +
                 '}';
     }
 }

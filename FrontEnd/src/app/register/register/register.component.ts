@@ -74,15 +74,17 @@ export class RegisterComponent implements OnInit {
   //   "",
   //   Validators.compose([Validators.required, Validators.pattern("^[0-9]+$")])
   // );
+  cardType = new FormControl("", Validators.compose([Validators.required]));
+
   customerId = new FormControl();
   cardNo = new FormControl();
 
   constructor(
     private registerService: RegisterService,
     private routerService: RouterService
-  ) { }
+  ) {}
 
-  ngOnInit() { }
+  ngOnInit() {}
 
   register() {
     this.user = {
@@ -97,6 +99,7 @@ export class RegisterComponent implements OnInit {
       },
       country: this.country.value,
       password: this.password.value,
+      cardType: this.cardType.value,
       customerId: Math.floor(10000000 + Math.random() * 90000000),
       cardNo: Math.floor(100000000000 + Math.random() * 900000000000),
     };
@@ -110,7 +113,16 @@ export class RegisterComponent implements OnInit {
       this.user["baseCurrency"] = "USD";
     }
 
-    this.user["amount"] = 10000;
+    if (this.user["cardType"] === "Platinum") {
+      this.user["amount"] = "100000";
+      this.user["cardLimit"] = "100000";
+    } else if (this.user["cardType"] === "Sapphire") {
+      this.user["amount"] = "500000";
+      this.user["cardLimit"] = "500000";
+    } else if (this.user["cardType"] === "Millennia") {
+      this.user["amount"] = "1000000";
+      this.user["cardLimit"] = "1000000";
+    }
 
     this.registerService.registerUser(this.user).subscribe(
       (data) => {
@@ -202,5 +214,10 @@ export class RegisterComponent implements OnInit {
       return "Minimum length of confirm password should be 5";
     }
   }
-  
+
+  getCardTypeErrorMessage() {
+    if (this.cardType.touched && this.cardType.hasError("required")) {
+      return "Card Type is required";
+    }
+  }
 }

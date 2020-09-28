@@ -4,6 +4,7 @@ public class Payment {
 
     private int id;
     private String customer;
+    private String date;
     private String month;
     private String year;
     private String city;
@@ -16,9 +17,10 @@ public class Payment {
     public Payment() {
     }
 
-    public Payment(int id, String customer, String month, String year, String city, String country, String category, String outlet, String amount, String transactionCurrency) {
+    public Payment(int id, String customer, String date, String month, String year, String city, String country, String category, String outlet, String amount, String transactionCurrency) {
         this.id = id;
         this.customer = customer;
+        this.date = date;
         this.month = month;
         this.year = year;
         this.city = city;
@@ -109,11 +111,20 @@ public class Payment {
         this.transactionCurrency = transactionCurrency;
     }
 
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
     @Override
     public String toString() {
         return "Payment{" +
                 "id=" + id +
                 ", customer='" + customer + '\'' +
+                ", date='" + date + '\'' +
                 ", month='" + month + '\'' +
                 ", year='" + year + '\'' +
                 ", city='" + city + '\'' +

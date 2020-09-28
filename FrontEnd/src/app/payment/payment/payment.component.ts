@@ -17,11 +17,11 @@ export class PaymentComponent implements OnInit {
   public payment: Payment;
   paymentMessage: string;
 
-  month = new FormControl("", Validators.compose([Validators.required]));
-  year = new FormControl(
-    "",
-    Validators.compose([Validators.required, Validators.pattern("^[0-9]{4}$")])
-  );
+  // month = new FormControl("", Validators.compose([Validators.required]));
+  // year = new FormControl(
+  //   "",
+  //   Validators.compose([Validators.required, Validators.pattern("^[0-9]{4}$")])
+  // );
   city = new FormControl(
     "",
     Validators.compose([
@@ -44,10 +44,25 @@ export class PaymentComponent implements OnInit {
   );
 
   baseCurrency: string;
-
   balance: string;
-
   user: any;
+
+  date: Date;
+
+  monthNames = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
 
   constructor(
     private authenticationService: AuthenticationService,
@@ -85,11 +100,19 @@ export class PaymentComponent implements OnInit {
   }
 
   addPayment() {
+    this.date = new Date();
+    // console.log("Date===>", this.date);
+
+    // console.log("Date===>", this.date.getDate());
+    // console.log("Month===>", this.monthNames[this.date.getMonth()]);
+    // console.log("Year===>", this.date.getFullYear());
+
     this.payment = {
       id: 1,
       customer: this.authenticationService.getUserId(),
-      month: this.month.value,
-      year: 2019,
+      date: this.date.getDate(),
+      month: this.monthNames[this.date.getMonth()],
+      year: this.date.getFullYear(),
       city: this.city.value,
       country: this.country.value,
       category: this.category.value,
@@ -182,19 +205,21 @@ export class PaymentComponent implements OnInit {
         }
       );
   }
-  getMonthErrorMessage() {
-    if (this.month.touched && this.month.hasError("required")) {
-      return "Month is required";
-    }
-  }
 
-  getYearErrorMessage() {
-    if (this.year.touched && this.year.hasError("required")) {
-      return "Year is required";
-    } else if (this.year.touched && this.year.hasError("pattern")) {
-      return "Year should be in correct format (yyyy)";
-    }
-  }
+  // getMonthErrorMessage() {
+  //   if (this.month.touched && this.month.hasError("required")) {
+  //     return "Month is required";
+  //   }
+  // }
+
+  // getYearErrorMessage() {
+  //   if (this.year.touched && this.year.hasError("required")) {
+  //     return "Year is required";
+  //   } else if (this.year.touched && this.year.hasError("pattern")) {
+  //     return "Year should be in correct format (yyyy)";
+  //   }
+  // }
+
   getCityErrorMessage() {
     if (this.city.touched && this.city.hasError("required")) {
       return "City is required";

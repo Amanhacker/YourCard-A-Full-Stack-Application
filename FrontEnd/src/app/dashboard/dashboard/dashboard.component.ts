@@ -17,6 +17,8 @@ export class DashboardComponent implements OnInit {
   customerId: string;
   cardNo: string;
   symbol: string;
+  cardLimit: string;
+  cardType: string;
 
   constructor(
     private paymentService: PaymentService,
@@ -26,33 +28,55 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.username = this.authService.getUserId();
-    this.registerService.getUserBalance(this.authService.getUserId()).subscribe(
-      (data) => {
-        this.currentBalance = data["balance"];
-      },
-      (err) => {
-        this.errMessage = err.message;
-      }
-    );
-    this.registerService.getCustomerId(this.authService.getUserId()).subscribe(
-      (data) => {
-        this.customerId = data["customerId"];
-      },
-      (err) => {
-        this.errMessage = err.message;
-      }
-    );
-    this.registerService.getCardNo(this.authService.getUserId()).subscribe(
-      (data) => {
-        this.cardNo = data["cardNo"];
-      },
-      (err) => {
-        this.errMessage = err.message;
-      }
-    );
-    this.registerService.getUserBaseCurrency(this.username).subscribe(
-      (data) => {
-        this.symbol = data["baseCurrency"] === "INR" ? "₹" : "$";
+    // this.registerService.getUserBalance(this.authService.getUserId()).subscribe(
+    //   (data) => {
+    //     var num = parseFloat(data["balance"]);
+
+    //     this.currentBalance = (Math.round(num * 100) / 100).toFixed(2);
+    //   },
+    //   (err) => {
+    //     this.errMessage = err.message;
+    //   }
+    // );
+    // this.registerService.getCustomerId(this.authService.getUserId()).subscribe(
+    //   (data) => {
+    //     this.customerId = data["customerId"];
+    //   },
+    //   (err) => {
+    //     this.errMessage = err.message;
+    //   }
+    // );
+    // this.registerService.getCardNo(this.authService.getUserId()).subscribe(
+    //   (data) => {
+    //     this.cardNo = data["cardNo"];
+    //   },
+    //   (err) => {
+    //     this.errMessage = err.message;
+    //   }
+    // );
+    // this.registerService.getUserBaseCurrency(this.username).subscribe(
+    //   (data) => {
+    //     this.symbol = data["baseCurrency"] === "INR" ? "₹" : "$";
+    //   },
+    //   (error) => {
+    //     console.log(error);
+    //   }
+    // );
+
+    this.registerService.getUser(this.username).subscribe(
+      (user) => {
+        var num = parseFloat(user["amount"]);
+        this.currentBalance = (Math.round(num * 100) / 100).toFixed(2);
+
+        this.customerId = user["customerId"];
+
+        this.cardNo = user["cardNo"];
+
+        this.symbol = user["baseCurrency"] === "INR" ? "₹" : "$";
+
+        this.cardLimit = user["cardLimit"];
+
+        this.cardType = user["cardType"];
       },
       (error) => {
         console.log(error);
