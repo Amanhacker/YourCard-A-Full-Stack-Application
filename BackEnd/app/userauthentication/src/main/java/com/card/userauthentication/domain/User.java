@@ -20,11 +20,12 @@ public class User {
     private String baseCurrency;
     private String cardType;
     private String cardLimit;
+    private String isActive;
 
     public User() {
     }
 
-    public User(String id, String dob, String aadhaarNo, String panNo, Address address, String country, String password, String amount, String customerId, String cardNo, String baseCurrency, String cardType, String cardLimit) {
+    public User(String id, String dob, String aadhaarNo, String panNo, Address address, String country, String password, String amount, String customerId, String cardNo, String baseCurrency, String cardType, String cardLimit, String isActive) {
         this.id = id;
         this.dob = dob;
         this.aadhaarNo = aadhaarNo;
@@ -38,6 +39,7 @@ public class User {
         this.baseCurrency = baseCurrency;
         this.cardType = cardType;
         this.cardLimit = cardLimit;
+        this.isActive = isActive;
     }
 
     public String getId() {
@@ -144,6 +146,14 @@ public class User {
         this.cardLimit = cardLimit;
     }
 
+    public String getIsActive() {
+        return isActive;
+    }
+
+    public void setIsActive(String isActive) {
+        this.isActive = isActive;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -160,6 +170,7 @@ public class User {
                 ", baseCurrency='" + baseCurrency + '\'' +
                 ", cardType='" + cardType + '\'' +
                 ", cardLimit='" + cardLimit + '\'' +
+                ", isActive='" + isActive + '\'' +
                 '}';
     }
 }

@@ -31,12 +31,14 @@
     </mat-card>
 
     <mat-card class="example-card" id="card2">
-
-            
       <div class="flip-box">
         <div class="flip-box-inner">
           <div class="flip-box-front">
-            <img class="img-card2" src="../../../assets/images/hero-unit/shopping.jpg" alt="">
+            <img
+              class="img-card2"
+              src="../../../assets/images/hero-unit/shopping.jpg"
+              alt=""
+            />
           </div>
           <div class="flip-box-back">
             <!-- <h2>Paris</h2>
@@ -46,7 +48,7 @@
                 >Your Account Info <br
               /></mat-card-title>
             </mat-card-header>
-      
+
             <mat-card-content>
               <p class="card-info2">
                 Your Customer Id : {{ customerId }} <br />
@@ -59,7 +61,6 @@
                 <br />
               </p>
             </mat-card-content>
-
           </div>
         </div>
       </div>
@@ -79,10 +80,17 @@
           Balance: {{ symbol }} {{ currentBalance }} <br />
           <br />
           <!-- Card Limit per day: 10 lakhs <br /> -->
-         <!-- <br />
+      <!-- <br />
         </p>
       </mat-card-content> -->
     </mat-card>
+  </div>
+
+  <div class="block-card-container">
+    <h2>Card Stolen??</h2>
+    <button mat-flat-button color="primary" (click)="showDialogBox()">
+      Block your card
+    </button>
   </div>
 
   <div id="explore" *ngIf="paymentList !== undefined">

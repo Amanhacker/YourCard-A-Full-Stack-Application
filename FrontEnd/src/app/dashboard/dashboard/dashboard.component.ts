@@ -3,6 +3,9 @@ import { AuthenticationService } from "src/app/services/authentication.service";
 import { PaymentService } from "src/app/services/payment.service";
 import { Chart } from "node_modules/chart.js";
 import { RegisterService } from "src/app/services/register.service";
+import { MatDialog, MatDialogRef } from "@angular/material";
+import { User } from "src/app/login/login/user";
+import { SnackbarService } from "src/app/services/snackbar.service";
 
 @Component({
   selector: "app-dashboard",
@@ -20,10 +23,14 @@ export class DashboardComponent implements OnInit {
   cardLimit: string;
   cardType: string;
 
+  user: User;
+
   constructor(
     private paymentService: PaymentService,
     private authService: AuthenticationService,
-    private registerService: RegisterService
+    private registerService: RegisterService,
+    private snackBarService: SnackbarService,
+    public dialog: MatDialog
   ) {}
 
   ngOnInit() {
@@ -65,6 +72,9 @@ export class DashboardComponent implements OnInit {
 
     this.registerService.getUser(this.username).subscribe(
       (user) => {
+        this.user = user;
+        console.log("User data in dashboard", this.user);
+
         var num = parseFloat(user["amount"]);
         this.currentBalance = (Math.round(num * 100) / 100).toFixed(2);
 
@@ -385,6 +395,32 @@ export class DashboardComponent implements OnInit {
 
     return result;
   }
+
+  showDialogBox() {
+    const dialogRef = this.dialog.open(DialogOverview, {
+      width: "350px",
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log("Result from Dialog box:", result);
+
+      if (result) {
+        this.user["isActive"] = "false";
+
+        // function name should be updateUser() not updateUserBalance()
+        this.registerService.updateUserBalance(this.user).subscribe(
+          (data) => {
+            console.log("Updated active status", data);
+
+            this.snackBarService.showSnackBar("This card has been blocked", "");
+          },
+          (error) => {
+            console.log(error);
+          }
+        );
+      }
+    });
+  }
 }
 
 //Please don't delete the below code
@@ -528,3 +564,19 @@ export class DashboardComponent implements OnInit {
 //   });
 
 //}
+
+@Component({
+  selector: "dialog-overview",
+  templateUrl: "dialog-overview.html",
+})
+export class DialogOverview {
+  constructor(public dialogRef: MatDialogRef<DialogOverview>) {}
+
+  onNoClick() {
+    this.dialogRef.close(false);
+  }
+
+  onConfirm() {
+    this.dialogRef.close(true);
+  }
+}

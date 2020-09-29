@@ -83,7 +83,7 @@ public class PaymentServiceImpl implements IPaymentService {
         List<Payment> outletList = userPaymentList.stream()
                 .filter(payment -> payment.getOutlet().equals(outletName))
                 .collect(Collectors.toList());
-        if(outletList==null || outletList.size()==0){
+        if (outletList == null || outletList.size() == 0) {
             throw new OutletNotFoundException("Payment details for the given outlet is not found");
         }
         return outletList;
@@ -101,7 +101,7 @@ public class PaymentServiceImpl implements IPaymentService {
         List<Payment> countryList = userPaymentList.stream()
                 .filter(payment -> payment.getCountry().equals(country))
                 .collect(Collectors.toList());
-        if(countryList==null || countryList.size()==0){
+        if (countryList == null || countryList.size() == 0) {
             throw new CountryNotFoundException("Payment details for the given country is not found");
         }
         return countryList;
@@ -117,7 +117,7 @@ public class PaymentServiceImpl implements IPaymentService {
         List<Payment> categoryList = userPaymentList.stream()
                 .filter(payment -> payment.getCategory().equals(category))
                 .collect(Collectors.toList());
-        if(categoryList==null || categoryList.size()==0){
+        if (categoryList == null || categoryList.size() == 0) {
             throw new CategoryNotFoundException("Payment details for the given category is not found");
         }
         return categoryList;
@@ -134,7 +134,7 @@ public class PaymentServiceImpl implements IPaymentService {
         List<Payment> cityList = userPaymentList.stream()
                 .filter(payment -> payment.getCity().equals(city))
                 .collect(Collectors.toList());
-        if(cityList==null || cityList.size()==0){
+        if (cityList == null || cityList.size() == 0) {
             throw new CityNotFoundException("Payment details for the given city is not found");
         }
         return cityList;
@@ -150,7 +150,7 @@ public class PaymentServiceImpl implements IPaymentService {
         List<Payment> yearList = userPaymentList.stream()
                 .filter(payment -> payment.getYear().equals(year))
                 .collect(Collectors.toList());
-        if(yearList==null || yearList.size()==0){
+        if (yearList == null || yearList.size() == 0) {
             throw new YearNotFoundException("Payment details for the given year is not found");
         }
         return yearList;
@@ -166,7 +166,7 @@ public class PaymentServiceImpl implements IPaymentService {
         List<Payment> monthList = userPaymentList.stream()
                 .filter(payment -> payment.getMonth().equals(month))
                 .collect(Collectors.toList());
-        if(monthList==null || monthList.size()==0){
+        if (monthList == null || monthList.size() == 0) {
             throw new MonthNotFoundException("Payment details for the given month is not found");
         }
         return monthList;

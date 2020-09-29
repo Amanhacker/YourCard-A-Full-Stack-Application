@@ -126,6 +126,14 @@ export class PaymentComponent implements OnInit {
       this.payment["transactionCurrency"] = "USD";
     }
 
+    if (this.user["isActive"] === "false") {
+      this.snackBarService.showSnackBar(
+        "This card is blocked!",
+        "Contact the bank"
+      );
+      return;
+    }
+
     this.registerService
       .getUserBaseCurrency(this.authenticationService.getUserId())
       .subscribe(

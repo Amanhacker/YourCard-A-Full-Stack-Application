@@ -124,6 +124,8 @@ export class RegisterComponent implements OnInit {
       this.user["cardLimit"] = "1000000";
     }
 
+    this.user["isActive"] = "true";
+
     this.registerService.registerUser(this.user).subscribe(
       (data) => {
         console.log(data);
