@@ -1,8 +1,15 @@
 <!-- <app-graph1></app-graph1> -->
 <div class="main">
   <div>
+    <div class="block-card-container">
+      <h2 class="block-text">Card Stolen ??</h2>
+      <button class="block-btn" mat-flat-button color="primary" (click)="showDialogBox()">
+        Block your card
+      </button>
+    </div>
     <h2 class="head-title">Welcome to Natwest Group, {{ username }}</h2>
   </div>
+
 
   <div class="card-flex">
     <mat-card class="example-card">
@@ -86,12 +93,12 @@
     </mat-card>
   </div>
 
-  <div class="block-card-container">
-    <h2>Card Stolen??</h2>
-    <button mat-flat-button color="primary" (click)="showDialogBox()">
+  <!-- <div class="block-card-container">
+    <h2 class="block-text">Card Stolen??</h2>
+    <button class="block-btn" mat-flat-button color="primary" (click)="showDialogBox()">
       Block your card
     </button>
-  </div>
+  </div> -->
 
   <div id="explore" *ngIf="paymentList !== undefined">
     <h2 id="head-title2">Explore your customized dashboard</h2>
