@@ -31,7 +31,40 @@
     </mat-card>
 
     <mat-card class="example-card" id="card2">
-      <mat-card-header>
+
+            
+      <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img class="img-card2" src="../../../assets/images/hero-unit/shopping.jpg" alt="">
+          </div>
+          <div class="flip-box-back">
+            <!-- <h2>Paris</h2>
+            <p>What an amazing city</p> -->
+            <mat-card-header>
+              <mat-card-title class="title" id="title2"
+                >Your Account Info <br
+              /></mat-card-title>
+            </mat-card-header>
+      
+            <mat-card-content>
+              <p class="card-info2">
+                Your Customer Id : {{ customerId }} <br />
+                <br />
+                Card no : {{ cardNo }} <br />
+                <br />
+                Balance: {{ symbol }} {{ currentBalance }} <br />
+                <br />
+                <!-- Card Limit per day: 10 lakhs <br /> -->
+                <br />
+              </p>
+            </mat-card-content>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- <mat-card-header>
         <mat-card-title class="title" id="title2"
           >Your Account Info <br
         /></mat-card-title>
@@ -46,9 +79,9 @@
           Balance: {{ symbol }} {{ currentBalance }} <br />
           <br />
           <!-- Card Limit per day: 10 lakhs <br /> -->
-          <br />
+         <!-- <br />
         </p>
-      </mat-card-content>
+      </mat-card-content> -->
     </mat-card>
   </div>
 
