@@ -13,9 +13,9 @@
 
 Technologies used : Angular, Spring Boot, MongoDB, etc
 
-Note-> payment-done-final is the main and final branch
+Note:  payment-done-final is the main and final branch
 
-Steps to run the applications :-
+- Steps to run the applications :-
 
 1) Open the front-end folder in Visual Studio and run 
                                npm install
