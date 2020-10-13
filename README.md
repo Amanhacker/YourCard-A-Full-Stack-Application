@@ -17,13 +17,13 @@ Note:  payment-done-final is the main and final branch
 
 - Steps to run the applications :-
 
-1) Open the front-end folder in Visual Studio and run 
+1). Open the front-end folder in Visual Studio and run 
                                npm install
                                ng serve -o
 
-2) Run Mongodb in your local system.                         
+2). Run Mongodb in your local system.                         
  
-3) Open the BackEnd folder in IntelliJ Idea and run the below java folders in the below shown order :
+3). Open the BackEnd folder in IntelliJ Idea and run the below java folders in the below shown order :
             ServicediscoveryApplication.java -> GatewayApplication.java -> then Contact, Payment & UserAuthentication Application java files in any order.
             
- 4). You are good to open the full stack application in your local machine and play with all the functionalites with the website.
+4). You are good to open the full stack application in your local machine and play with all the functionalites with the website.
