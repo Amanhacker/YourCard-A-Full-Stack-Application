@@ -11,7 +11,10 @@
                 5). Added Card Blocking functionality in case the card is stolen or lost
                 6). A header, Hero-unit made using ng-carousel component of Angular, and a footer in Homepage of Application. 
 
-Technologies used : Angular, Spring Boot, MongoDB, etc
+Technologies used : Angular, Spring Boot, Chart.js, etc 
+API's used : Currency Layer API
+Databases: MongoDB, MySQL
+Languages : HTML, CSS, JavaScript, TypeScript
 
 Note:  payment-done-final is the main and final branch
 
