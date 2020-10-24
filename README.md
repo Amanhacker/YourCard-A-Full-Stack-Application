@@ -1,4 +1,5 @@
 # Final-Hackathon---YourCard
+- Note:  payment-done-final is the main and final branch
 
 - Created a full-stack application "YourCard" from scratch which provides the card usage analysis of International Travel Card in the form of a customized dashboard for their users. This application is responsive for Pixel 2 device and desktop screen of any resolution.
 - Used Chart.js library for displaying the real-time user data in the form of different Charts in the dashboard. Added Card Blocking functionality for registered users.
@@ -15,8 +16,6 @@ Technologies used : Angular, Spring Boot, Chart.js, etc
 API's used : Currency Layer API
 Databases: MongoDB, MySQL
 Languages : HTML, CSS, JavaScript, TypeScript
-
-Note:  payment-done-final is the main and final branch
 
 - Steps to run the applications :-
 
