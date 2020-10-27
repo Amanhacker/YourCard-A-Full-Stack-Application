@@ -13,7 +13,7 @@
 
 Technologies used : Angular, Spring Boot, MongoDB, etc
 
-Note:  payment-done-final is the main and final branch
+Note:  "payment-done" is the main and final branch
 
 - Steps to run the applications :-
 
