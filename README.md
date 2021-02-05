@@ -1,9 +1,10 @@
 # Final-Hackathon---YourCard
 
-##Problem Statement
+## Problem Statement
 
 This commercial bank’s international travel card is very popular with not just its own customers, but also many other bank customers. Business team is keen to provide various card usage analysis as dashboard to consumers that shows consumer spend and allows users to search easily. Could you think and create personalized dashboard that consumer can access from any of his / her devices/computers?
 
+## Work Done
 - Created a full-stack application "YourCard" from scratch which provides the card usage analysis of International Travel Card in the form of a customized dashboard for their users.
 - Used Chart.js library for displaying the real-time user data in the form of different Charts in the dashboard. Added Card Blocking functionality for registered users.
 - Users can see their consumer spend based on some filters such as category wise, month wise, etc and it also allows users to search any of their past transactions easily.
@@ -15,21 +16,21 @@ This commercial bank’s international travel card is very popular with not just
                 5). Added Card Blocking functionality in case the card is stolen or lost
                 6). A header, Hero-unit made using ng-carousel component of Angular, and a footer in Homepage of Application. 
 
-##Technologies Used :
+## Technologies Used :
 
-###FrontEnd
+### FrontEnd
 HTML, CSS, Carousel, Angular, Angular Material, JS Charts, Currency Layer API
 
-###BackEnd
+### BackEnd
 Spring Boot
 
-###DataBase
+### DataBase
 MongoDb (since the data was unstructured)
 
 
 Note:  "payment-done" is the main and final branch
 
-- Steps to run the applications :-
+## Steps to run the applications :-
 
 1). Open the front-end folder in Visual Studio and run 
                                npm install
