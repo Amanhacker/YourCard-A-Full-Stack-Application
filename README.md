@@ -41,4 +41,4 @@ Note:  "payment-done" is the main and final branch
 3). Open the BackEnd folder in IntelliJ Idea and run the below java folders in the below shown order :
             ServicediscoveryApplication.java -> GatewayApplication.java -> then Contact, Payment & UserAuthentication Application java files in any order.
             
-4). You are good to open the full stack application in your local machine and play with all the functionalites with the website.
+4). You are good to open the full stack application in your local machine and play with all the functionalites of the website.
