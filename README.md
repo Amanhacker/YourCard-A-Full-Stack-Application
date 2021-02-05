@@ -1,6 +1,6 @@
 # Final-Hackathon---YourCard
 
-Problem Statement
+##Problem Statement
 
 This commercial bank’s international travel card is very popular with not just its own customers, but also many other bank customers. Business team is keen to provide various card usage analysis as dashboard to consumers that shows consumer spend and allows users to search easily. Could you think and create personalized dashboard that consumer can access from any of his / her devices/computers?
 
@@ -15,15 +15,15 @@ This commercial bank’s international travel card is very popular with not just
                 5). Added Card Blocking functionality in case the card is stolen or lost
                 6). A header, Hero-unit made using ng-carousel component of Angular, and a footer in Homepage of Application. 
 
-#Technologies Used :
+##Technologies Used :
 
-FrontEnd
+###FrontEnd
 HTML, CSS, Carousel, Angular, Angular Material, JS Charts, Currency Layer API
 
-BackEnd
-Spring Boot, Netflix Zuul, Netflix Eureka, JWT tokens
+###BackEnd
+Spring Boot
 
-DataBase
+###DataBase
 MongoDb (since the data was unstructured)
 
 
