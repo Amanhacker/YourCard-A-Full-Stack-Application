@@ -9,12 +9,12 @@ This commercial bank’s international travel card is very popular with not just
 - Used Chart.js library for displaying the real-time user data in the form of different Charts in the dashboard. Added Card Blocking functionality for registered users.
 - Users can see their consumer spend based on some filters such as category wise, month wise, etc and it also allows users to search any of their past transactions easily.
 - This application has    
-                1). Register Page for non-registered users.
-                2). Login page for registered users.
-                3). Personalized Dashboard to display the real-time transaction data in form of charts.
-                4). Search functionality module to search and filter out any of their past transactions.
-                5). Added Card Blocking functionality in case the card is stolen or lost
-                6). A header, Hero-unit made using ng-carousel component of Angular, and a footer in Homepage of Application. 
+                1). Register Page for non-registered users. <br>
+                2). Login page for registered users. <br>
+                3). Personalized Dashboard to display the real-time transaction data in form of charts. <br>
+                4). Search functionality module to search and filter out any of their past transactions. <br>
+                5). Added Card Blocking functionality in case the card is stolen or lost. <br>
+                6). A header, Hero-unit made using ng-carousel component of Angular, and a footer in Homepage of Application. <br>
 
 ## Technologies Used :
 
