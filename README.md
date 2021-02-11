@@ -4,6 +4,8 @@
 
 This commercial bank’s international travel card is very popular with not just its own customers, but also many other bank customers. Business team is keen to provide various card usage analysis as dashboard to consumers that shows consumer spend and allows users to search easily. Could you think and create personalized dashboard that consumer can access from any of his / her devices/computers?
 
+# Pro-Tip :Go to https://github1s.com/Amanhacker/YourCard-A-Full-Stack-Application for browsing through the code in the browser itself.
+
 ## Work Done
 - Created a full-stack application "YourCard" from scratch which provides the card usage analysis of International Travel Card in the form of a customized dashboard for their users.
 - Used Chart.js library for displaying the real-time user data in the form of different Charts in the dashboard. Added Card Blocking functionality for registered users.
