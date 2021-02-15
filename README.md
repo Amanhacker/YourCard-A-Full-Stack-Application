@@ -7,6 +7,8 @@ This commercial bank’s international travel card is very popular with not just
 ## Pro-Tip :
 Go to https://github1s.com/Amanhacker/YourCard-A-Full-Stack-Application for browsing through the code in the browser itself.
 
+Go to https://drive.google.com/drive/folders/1euOfPIe8I2qMrawu5dVd895MFpVpHRO6?usp=sharing for seeing the glimpse(some snapshots of each module) of our Full Stack Application for both Laptop view and Responsive device (preferrably designed for Pixel 2)
+
 ## Work Done
 - Created a full-stack application "YourCard" from scratch which provides the card usage analysis of International Travel Card in the form of a customized dashboard for their users.
 - Used Chart.js library for displaying the real-time user data in the form of different Charts in the dashboard. Added Card Blocking functionality for registered users.
