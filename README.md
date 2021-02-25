@@ -14,12 +14,16 @@ Go to https://drive.google.com/drive/folders/1euOfPIe8I2qMrawu5dVd895MFpVpHRO6?u
 - Used Chart.js library for displaying the real-time user data in the form of different Charts in the dashboard. Added Card Blocking functionality for registered users.
 - Users can see their consumer spend based on some filters such as category wise, month wise, etc and it also allows users to search any of their past transactions easily.
 - This application has    
+
                 1). Register Page for non-registered users. <br>
                 2). Login page for registered users. <br>
                 3). Personalized Dashboard to display the real-time transaction data in form of charts. <br>
                 4). Search functionality module to search and filter out any of their past transactions. <br>
                 5). Added Card Blocking functionality in case the card is stolen or lost. <br>
-                6). A header, Hero-unit made using ng-carousel component of Angular, and a footer in Homepage of Application. <br>
+                6). Payment module to do any kind of transactions. <br>
+                7). A header, Hero-unit made using ng-carousel component of Angular, and a footer in Homepage of Application. <br>
+                8). PageNotFoundException module to handle those cases where the link is broken or invalid. <br>
+                9). Application is made responsive for Pixel 2 device. <br>
 
 ## Technologies Used :
 
