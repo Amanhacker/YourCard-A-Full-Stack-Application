@@ -22,7 +22,15 @@ Go to https://drive.google.com/drive/folders/1euOfPIe8I2qMrawu5dVd895MFpVpHRO6?u
                 6). Payment module to do any kind of transactions. <br>
                 7). A header, Hero-unit made using ng-carousel component of Angular, and a footer in Homepage of Application. <br>
                 8). PageNotFoundException module to handle those cases where the link is broken or invalid. <br>
-                9). Application is made responsive for Pixel 2 device.
+                9). Used Currency layer API to convert from one currency to another since we are displaying the consumer spendings always in home currency. <br>
+                10). Application is made responsive for Pixel 2 device. 
+
+- The graphs which are being shown in the customized dashboard of a user are :
+                1). Amount spent in different months over a year. <br>
+                2). No. of transactions done over different category. <br>
+                3). No. of transactions done citywise
+
+
 
 ## Technologies Used :
 
