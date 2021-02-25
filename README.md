@@ -25,7 +25,7 @@ Go to https://drive.google.com/drive/folders/1euOfPIe8I2qMrawu5dVd895MFpVpHRO6?u
                 9). Used Currency layer API to convert from one currency to another since we are displaying the consumer spendings always in home currency. <br>
                 10). Application is made responsive for Pixel 2 device. 
 
-- The graphs which are being shown in the customized dashboard of a user are
+- The graphs which are being shown in the customized dashboard of a user are <br>
                 1). Amount spent in different months over a year. <br>
                 2). No. of transactions done over different category. <br>
                 3). No. of transactions done citywise
